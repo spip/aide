@@ -74,7 +74,7 @@ $GLOBALS['aider_index'] = array(
  *
  * @param string $aide
  *    clé d'identification de l'aide souhaitée
- * @param strink $skel
+ * @param string $skel
  *    Nom du squelette qui appelle ce bouton d'aide
  * @param array $env
  *    Environnement du squelette
@@ -83,7 +83,7 @@ $GLOBALS['aider_index'] = array(
  *    true : Le lien est réalisé sur spip.net/aide/ directement...
  * @return string
  **/
-function inc_aider_dist($aide = '', $skel = '', $env = array(), $aide_spip_directe = false) {
+function inc_aide_dist($aide = '', $skel = '', $env = array(), $aide_spip_directe = false) {
 
 	if (($skel = basename($skel))
 		and isset($GLOBALS['aider_index'][$skel])

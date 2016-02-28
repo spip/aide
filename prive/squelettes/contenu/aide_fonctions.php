@@ -32,7 +32,7 @@ function aide_contenu() {
 	}
 	$path = $GLOBALS['spip_lang'] . "-aide.html";
 
-	include_spip('inc/aider');
+	include_spip('inc/aide');
 	list($contenu, $lastm) = aide_fichier($path, $help_server);
 
 	if (strpos($contenu, "aide_index") !== false) {
@@ -44,6 +44,7 @@ function aide_contenu() {
 }
 
 function aide_extrait_section($aide) {
+	include_spip('inc/aide');
 	return aide_section($aide, aide_contenu());
 }
 
