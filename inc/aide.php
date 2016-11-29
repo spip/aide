@@ -103,7 +103,7 @@ function inc_aide_dist($aide = '', $skel = '', $env = array(), $aide_spip_direct
 		$url = parametre_url($url, 'var_lang', $GLOBALS['spip_lang']);
 	} else {
 		$args = "aide=$aide&var_lang=" . $GLOBALS['spip_lang'];
-		$url = generer_url_ecrire("aide", $args);
+		$url = generer_url_ecrire('aide', $args);
 	}
 
 	return aider_icone($url);
@@ -127,16 +127,18 @@ function aider_icone($url, $clic = '') {
 	include_spip('inc/lang');
 	if (!$clic) {
 		$t = _T('titre_image_aide');
-		$clic = http_img_pack("aide" . aide_lang_dir($GLOBALS['spip_lang'], $GLOBALS['spip_lang_rtl']) . "-16.png",
+		$clic = http_img_pack(
+			'aide' . aide_lang_dir($GLOBALS['spip_lang'], $GLOBALS['spip_lang_rtl']) . '-16.png',
 			_T('info_image_aide'),
-			" title=\"$t\" class='aide'");
+			" title=\"$t\" class='aide'"
+		);
 	}
 
 	return "\n&nbsp;&nbsp;<a class='aide popin'\nhref='"
 	. $url
 	. "' target='_blank'>"
 	. $clic
-	. "</a>";
+	. '</a>';
 }
 
 /**  Les sections d'un fichier aide sont reperées ainsi. */
@@ -158,7 +160,7 @@ define('_SECTIONS_AIDE', ',<h([12])(?:\s+class="spip")?' . '>([^/]+?)(?:/(.+?))?
 function aide_fichier($path, $help_server) {
 
 	$md5 = md5(serialize($help_server));
-	$fichier_aide = _DIR_AIDE . substr($md5, 0, 16) . "-" . $path;
+	$fichier_aide = _DIR_AIDE . substr($md5, 0, 16) . '-' . $path;
 	$lastm = @filemtime($fichier_aide);
 	$lastversion = @filemtime(_DIR_RESTREINT . 'inc_version.php');
 	$here = @(is_readable($fichier_aide) and ($lastm >= $lastversion));
@@ -177,7 +179,7 @@ function aide_fichier($path, $help_server) {
 	foreach ($help_server as $k => $server) {
 		// Remplacer les liens aux images par leur gestionnaire de cache
 		$url = "$server/$path";
-		$local = _DIR_AIDE . substr(md5($url), 0, 8) . "-" . preg_replace(",[^\w.]+,i", "_", $url);
+		$local = _DIR_AIDE . substr(md5($url), 0, 8) . '-' . preg_replace(',[^\w.]+,i', '_', $url);
 		$local = _DIR_RACINE . copie_locale($url, 'modif', $local);
 
 		lire_fichier($local, $page);
@@ -226,9 +228,11 @@ function aide_fichier($path, $help_server) {
 	$contenu = '<div>' . join('', $contenu) . '</div>';
 
 	// Renvoyer les liens vraiment externes dans une autre fenetre
-	$contenu = preg_replace('@<a href="(http://[^"]+)"([^>]*)>@',
+	$contenu = preg_replace(
+		'@<a href="(http://[^"]+)"([^>]*)>@',
 		'<a href="\\1"\\2 target="_blank">',
-		$contenu);
+		$contenu
+	);
 
 	// Correction typo dans la langue demandee
 	#changer_typo($lang_aide);
@@ -274,7 +278,7 @@ define('_REPLACE_IMG_PACK', "@(<img([^<>]* +)?\s*src=['\"])img_pack\/@ims");
  * @return string
  */
 function aide_fixe_img($contenu, $server) {
-	$html = "";
+	$html = '';
 	$re = "@(<img([^<>]* +)?\s*src=['\"])((AIDE|IMG|local)/([-_a-zA-Z0-9]*/?)([^'\"<>]*))@imsS";
 	while (preg_match($re, $contenu, $r)) {
 		$p = strpos($contenu, $r[0]);
@@ -303,7 +307,7 @@ function aide_fixe_img($contenu, $server) {
  * @return string
  */
 function aide_section($aide, $contenu, $prof = 2) {
-	$maxprof = ($prof >= 2) ? "12" : "1";
+	$maxprof = ($prof >= 2) ? '12' : '1';
 	$r = "@<h$prof" . '(?: class="spip")?' . '>\s*' . $aide
 		. "\s*(?:/.+?)?</h$prof>(.*?)<(?:(?:h[$maxprof])|/body)@ism";
 

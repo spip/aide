@@ -8,10 +8,9 @@ function aide_changer_langue($var_lang_r, $lang_r) {
 	if ($var_lang_r) {
 		changer_langue($lang = $var_lang_r);
 	}
-	if ($lang_r)
+	if ($lang_r) {
 		# pour le cas ou on a fait appel au menu de changement de langue
 		# (aide absente dans la langue x)
-	{
 		changer_langue($lang = $lang_r);
 	} else {
 		$lang = $GLOBALS['spip_lang'];
@@ -30,14 +29,14 @@ function aide_contenu() {
 	if (!is_array($help_server)) {
 		$help_server = array($help_server);
 	}
-	$path = $GLOBALS['spip_lang'] . "-aide.html";
+	$path = $GLOBALS['spip_lang'] . '-aide.html';
 
 	include_spip('inc/aide');
 	list($contenu, $lastm) = aide_fichier($path, $help_server);
 
-	if (strpos($contenu, "aide_index") !== false) {
+	if (strpos($contenu, 'aide_index') !== false) {
 		$contenu = preg_replace(",target=['\"][^'\"]*['\"],Uims", "class='ajax'", $contenu);
-		$contenu = str_replace("aide_index", "aide", $contenu);
+		$contenu = str_replace('aide_index', 'aide', $contenu);
 	}
 
 	return $contenu;
@@ -103,10 +102,10 @@ function aide_menu($aide) {
 
 			if ($aide == $sujet) {
 				$ouvrir = 1;
-				$class = "article-actif";
+				$class = 'article-actif';
 				$texte .= http_script("curr_article = '$id';");
 			} else {
-				$class = "article-inactif";
+				$class = 'article-inactif';
 			}
 
 			$h = generer_url_aide("aide=$sujet&frame=body&var_lang=$spip_lang");
