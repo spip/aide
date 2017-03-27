@@ -1,4 +1,4 @@
-<div style="float:left;width:200px;">
+<div style="float:#LANG_LEFT;width:200px;">
 	#SET{close,''}
 	#SET{prev,''}
 	#SET{next,''}
@@ -21,7 +21,7 @@
 	</ul>
 </div>
 [(#GET{next}|non)#SET{prev,''}]
-<div class="contenu-aide" id="contenu-aide" lang="[(#EVAL{_request('var_lang_r')}|aide_changer_langue{#ENV{lang_r}})]" style="position:relative;margin-left:220px;">
+<div class="contenu-aide" id="contenu-aide" lang="[(#EVAL{_request('var_lang_r')}|aide_changer_langue{#ENV{lang_r}})]" style="position:relative;margin-#LANG_LEFT:220px;">
 	[(#ENV{aide}|aide_extrait_section|image_reduire{500}|sinon{
 		[<div style='text-align:center;'>
 			(#CHEMIN_IMAGE{logo-spip.gif}|balise_img{SPIP})
