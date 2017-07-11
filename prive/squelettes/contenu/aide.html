@@ -24,12 +24,12 @@
 <div class="contenu-aide" id="contenu-aide" lang="[(#EVAL{_request('var_lang_r')}|aide_changer_langue{#ENV{lang_r}})]" style="position:relative;margin-#LANG_LEFT:220px;">
 	[(#ENV{aide}|aide_extrait_section|image_reduire{500}|sinon{
 		[<div style='text-align:center;'>
-			(#CHEMIN_IMAGE{logo-spip.gif}|balise_img{SPIP})
-			<div style='font-variant: small-caps;'>
+			(#CHEMIN_IMAGE{logo-spip.png}|balise_img{SPIP})
+			<p style='font-variant: small-caps;'>
 			Syst&egrave;me de publication pour l'Internet
-			</div>
+			</p>
 		</div>
-		<p>
+		<p style='text-align:center;'>
 		#SET{doc,#EVAL{$GLOBALS}|table_valeur{home_server}|concat{/,#EVAL{$GLOBALS}|table_valeur{spip_lang}}}
 		<:info_copyright_doc{spipnet=#GET{doc},spipnet_affiche=#GET{doc}}:>
 		</p>]
