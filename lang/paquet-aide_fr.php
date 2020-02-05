@@ -1,6 +1,6 @@
 <?php
 // This is a SPIP language file  --  Ceci est un fichier langue de SPIP
-// Fichier source, a modifier dans svn://zone.spip.org/spip-zone/_core_/plugins/aide/lang
+// Fichier source, a modifier dans https://git.spip.net/spip/aide.git
 if (!defined('_ECRIRE_INC_VERSION')) {
 	return;
 }
