@@ -1,8 +1,8 @@
 <paquet
 	prefix="aide"
 	categorie="divers"
-	version="1.1.0"
-	etat="stable"
+	version="2.0.0"
+	etat="dev"
 	compatibilite="[3.3.0-dev;3.3.*]"
 	logo="aide-logo.svg"
 >
@@ -13,4 +13,7 @@
 	<auteur>Collectif SPIP</auteur>
 
 	<licence lien="http://www.gnu.org/licenses/gpl-3.0.html">GPL</licence>
+
+	<pipeline nom="aide_index" inclure="aide_fonctions.php" action="" />
+
 </paquet>

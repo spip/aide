@@ -1,0 +1,32 @@
+<!-- ig br -->
+
+Vous pouvez en outre créer très rapidement un lien
+hypertexte vers la définition d'un terme dans un glossaire
+externe; pour un terme donné, il suffit d'insérer
+au sein de votre texte le raccourci <code>[?terme]</code>.
+
+Ainsi le code suivant:
+« <code>{À la recherche du temps perdu} est l'œuvre majeure de [?Marcel Proust]</code> »
+donnera à l'affichage:
+«{À la recherche du temps perdu} est l'œuvre majeure de [?Marcel Proust]».
+Pensez à cliquer sur le lien pour vérifier que le terme entré
+(nom propre ou nom commun) est correctement orthographié,
+et qu'il pointe sur une destination valide.
+
+
+Le glossaire externe prédéfini est [Wikipedia->http://www.wikipedia.org] qui impose certaines [conventions sur les titres->
+ http://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Conventions_sur_les_titres].
+Cette encyclopédie multilingue écrite sur un mode
+coopératif est ouverte à tous les contributeurs via
+Internet; prenez le temps de la connaître et d'y contribuer afin d'enrichir ce fonds de savoir partagé.
+
+
+Vous pouvez aussi référencer un autre glossaire en plaçant après le terme le signe # suivi du nom {G} du glossaire. SPIP appliquera alors la fonction <tt>glossaire_</tt>{G} sur le terme pour obtenir le lien à insérer.
+Cette fonction aura été placée dans le fichier <tt>mes_options.php</tt>.  Si le nom {G} se termine par des chiffres, ceux-ci seront préalablement retirés de ce nom, et formeront le deuxième argument de la fonction, ce qui est très utile pour un glossaire divisé en sections. On écrira donc:
+
+<cadre>[?read#man2]</cadre>
+
+pour indiquer que l'on référence l'explication du terme <tt>read</tt> dans la section 2 du glossaire nommé <tt>man</tt>.
+
+Les raccourcis pour mentionner la langue et créer une info-bulle, expliqués pour les liens externes, fonctionnent également pour les glossaires.
+

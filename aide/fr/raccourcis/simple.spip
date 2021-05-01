@@ -1,0 +1,92 @@
+<!-- ig br -->
+
+Dans un premier temps, nous présentons ici les raccourcis typographiques les plus courants et les plus simples. Pour les utilisateurs qui souhaiteraient affiner encore le contrôle de la mise en forme de leurs textes, nous présenterons des versions plus complexes de ces raccourcis.
+
+{N.B.} Les raccourcis simples répondent déjà largement à la grande majorité des besoins, et permettent de publier en ligne presque aussi simplement que l'on écrit un mail.
+
+{{{Typographie française automatique}}}
+
+SPIP respecte automatiquement les principales règles
+d'espacement de la typographie française - ainsi des espaces
+insécables sont ajoutées devant les caractères
+«:», «;», «!», «?»~-,
+et place des espaces insécables avant et après les
+guillemets «à la française».
+
+(Note: cette fonctionnalité n'est activée que sur les sites
+dont la langue principale est le français.)
+
+{{{Créer des paragraphes}}}
+
+Pour créer des paragraphes, il suffit de laisser une ligne
+vide, un peu comment on sépare les paragraphes dans un email
+(on «saute» une ligne).
+
+Le fait de simplement «revenir à la ligne»
+(retour-chariot) sans séparer les deux paragraphes par une
+ligne vide ne suffit pas pour provoquer un changement de paragraphe
+(cela ne provoque même pas un retour à la ligne).
+
+Vous pouvez laisser plusieurs lignes vides à la suite sans que
+cela modifie la présentation.
+
+[puces<-]
+
+{{{Insérer une puce}}}
+
+On peut insérer une puce en début de ligne dans SPIP : il suffit de revenir à la
+ligne et de commencer la nouvelle ligne avec un tiret
+(«-»).
+
+Notez: ici un simple retour à la ligne suffit (on peut faire
+des énumérations dans le même paragraphe); mais
+si l'on «saute» une ligne avant la ligne
+commençant par un tiret, une ligne vide est affichée
+avant l'énumération.
+
+
+Par exemple, <cadre>- Qu'est-ce que cela peut faire que je lutte pour la mauvaise cause 
+puisque je suis de bonne foi?
+- Et qu'est-ce que ça peut faire que je sois de mauvaise foi 
+puisque c'est pour la bonne cause. (Jacques 
+Prévert)</cadre> 
+sera affiché ainsi:
+<quote>
+- Qu'est-ce que cela peut faire que je lutte pour la mauvaise cause puisque je suis de bonne foi?
+- Et qu'est-ce que ça peut faire que je sois de mauvaise foi
+puisque c'est pour la bonne cause. (Jacques Prévert)
+</quote>
+
+On notera qu'il s'agit bien d'insérer une {puce} et non de créer une liste ([pour créer des listes voir->#listes])
+
+
+{{{Gras et italique}}}
+
+On  indique simplement du texte {en italique} en le plaçant 
+entre des accolades simples: «<HTML><TT>...du texte {en 
+italique} en...</TT></HTML>».
+
+On indique du texte {{en gras}} en le plaçant entre des 
+accolades doubles: «<HTML><TT>...du texte {{en gras}} 
+en...</TT></HTML>».
+
+{{{Intertitres}}}
+
+Les intertitres sont des titres à l'intérieur d'un 
+texte permettant d'en indiquer la structure. Dans SPIP, on les 
+indique très simplement en les plaçant entre des 
+accolades triples: «<HTML><TT>{{{Un titre de 
+partie}}}</tt></html>» affichera le texte en gras et centré:
+<quote>{{{Un titre de partie}}}</quote>
+
+
+{{{Trait de séparation horizontal}}}
+
+Il est très simple d'insérer un trait de séparation horizontal sur toute la largeur du texte: il suffit de placer une ligne ne contenant qu'une succession d'au moins quatre tirets, ainsi:
+
+<cadre>----</cadre>
+
+donne:
+<quote>
+----
+</quote>

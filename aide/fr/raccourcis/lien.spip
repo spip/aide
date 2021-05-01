@@ -1,0 +1,99 @@
+<!-- ig br -->
+
+On fabriquera facilement un lien hypertexte avec le code suivant:
+<cadre>SPIP est une initiative du [minirézo->http://www.minirezo.net/].</cadre>
+devient:
+<quote>SPIP est une initiative du [minirézo->http://www.minirezo.net/].</quote>
+(Mnémotechnique: le tiret suivi d'un chevron dessine une sorte de flèche qui indique que le texte du lien (avant la flèche) «pointe vers» une adresse.) 
+
+L'adresse du lien peut être une adresse absolue
+(commençant, comme ici, par <code>http://</code>),
+une adresse relative (vers une autre page du même site), un
+lien vers un document utilisant un protocole de l'internet
+(<code>ftp://</code>...), une adresse email
+(«<code>[->minirezo@rezo.net]</code>»)...
+
+Application spécifique: vous pouvez afficher en toutes lettres un lien cliquable sous la forme d'une adresse URL, 
+en n'indiquant rien avant la «flèche». Par exemple:
+
+<cadre>[->http://dmoz.org/World/Deutsch/Kultur/Literatur/Autoren_und_Autorinnen/P/Proust,_Marcel/]</cadre>
+affiche:
+
+ 
+ <quote>[->http://dmoz.org/World/Deutsch/Kultur/Literatur/Autoren_und_Autorinnen/P/Proust,_Marcel/]</quote>
+
+ Notez que, dans le cas des URL très longues, l'affichage est tronqué (pour éviter de dégrader 
+votre interface graphique), mais le lien hypertexte pointe vers la bonne adresse.
+
+[liensite<-]
+
+
+Il est possible de préciser  la langue de la page vers laquelle le lien pointe,
+ce que les navigateurs afficheront à leur convenance. Pour cela, il faut mettre le code-langue entre accolades. 
+
+ <cadre>[Un site en français{fr}->http:///www.adresse.tld]</cadre>
+
+Cela est particulièrement recommandé lorsque la page de destination n'est pas dans la même langue que votre texte. 
+
+Si l'on veut donner beaucoup d'informations  sur le lien sans allonger excessivement  la zone cliquable, on peut provoquer l'apparition d'une info-bulle  en plaçant  avant la flèche le signe | suivi du texte souhaité :
+
+ <cadre>[voir ici|Ce lien vous expliquera tout ce qu'il faut savoir->http:///www.adresse.tld]</cadre>
+
+affichera <tt>voir ici</tt>, le reste du texte n'apparaissant  qu'au survol.
+
+- {{Liens hypertextes à l'intérieur du site}}
+
+Ce même système de liens hypertextes facilite, de plus,
+la création de liens à l'intérieur de votre site
+sous SPIP. La seule subtilité consiste à repérer
+le {numéro} de l'article, de la rubrique, ou de la
+brève vers laquelle vous voulez mener votre lien hypertexte:
+<img src="AIDE/fr/articlenumero.gif" alt="NUMERO"  align="right" />
+lorsque vous «visitez», dans l'espace privé, un
+article, une brève ou une rubrique, la colonne de gauche
+contient un pavé indiquant, en gros caractères, ce
+numéro.
+
+C'est ce numéro que vous allez indiquer dans le lien hypertexte:
+
+-* Lien vers l'article 342 (quatre possibilités):}
+<HTML><TT>
+<br />lien vers [l'article->342]
+<br />lien vers [l'article->art342]
+<br />lien vers [l'article->article 342]
+<br /></tt></html>
+Application spécifique: <HTML><TT>[->art342]</tt></html> (on n'a rien indiqué avant la «flèche») affichera automatiquement
+le titre de l'article 342 avec un lien vers cet article.
+
+-* Lien vers la rubrique 12:}
+<HTML><TT>
+<br />lien vers [la rubrique->rub12]
+<br />lien vers [la rubrique->rubrique 12]
+</tt></html>
+
+-* Lien vers la brève 65:}
+<HTML><TT>
+<br />lien vers [la brève->br65]
+<br />lien vers [la brève->breve 65]
+<br />lien vers [la brève->brève 65]
+</tt></html>
+
+-* Auteurs, mots-clés, sites, images, documents:}
+<HTML><TT>
+<br />lien vers [un auteur->aut13] ou [le même auteur->auteur13]
+<br />lien vers [un mot->mot32]
+<br />lien vers [un site syndiqué->site1]
+<br />lien vers [un document joint->doc17] ou [le même document->document17]
+<br />lien vers [une image->img13] ou [la même image->image13]
+<br />
+</tt></html>
+
+Application spécifique: on peut, là aussi, ne rien spécifier avant la «flèche» 
+(<html><tt>[->aut13]</tt></html>...).
+SPIP insérera automatiquement les informations nécessaires. Dans le cas d'un document joint ou d'une image, si l'on a indiqué un titre manuellement, c'est ce titre qui sera affiché; sinon c'est le nom du fichier lui-même qui sera utilisé.
+
+Les raccourcis pour mentionner la langue et créer une info-bulle, expliqués pour les liens externes, fonctionnent également pour les liens internes.
+
+<div align='right'>en savoir plus: <a href='#glossaire'>liens vers un glossaire</a>,
+_ [ancres nommées->#ancres].
+</div>

@@ -31,40 +31,22 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 
 include_spip('inc/filtres');
 
-$GLOBALS['aider_index'] = array(
-	'editer_article.html' => array(
-		'surtitre' => 'arttitre',
-		'titre' => 'arttitre',
-		'soustitre' => 'arttitre',
-		'id_parent' => 'artrub',
-		'descriptif' => 'artdesc',
-		'virtuel' => 'artvirt',
-		'chapo' => 'arttitre',
-		'text_area' => 'arttexte'
-	),
 
-	'editer_breve.html' => array(
-		'id_parent' => 'brevesrub',
-		'lien_titre' => 'breveslien',
-		'statut' => 'brevesstatut'
-	),
-
-	'editer_groupe_mot.html' => array(
-		'titre' => 'motsgroupes'
-	),
-
-	'editer_mot.html' => array(
-		'titre' => 'mots',
-		'id_groupe' => 'motsgroupes'
-	),
-
-	'editer_rubrique.html' => array(
-		'titre' => 'arttitre',
-		'id_parent' => 'rubrub',
-		'text_area' => 'raccourcis'
-	)
-
-);
+/**
+ * Déclaration de l'index d'aide
+ */
+function aide_index() : array {
+	static $index = null;
+	if ($index === null) {
+		$index = [];
+		$index['raccourcis'] = [
+			'simple', 'lien', 'note', 'citation', 
+			'tableau', 'liste', 'glossaire', 'ancre'
+		];
+		$index = pipeline('aide_index', $index);
+	}
+	return $index;
+}
 
 
 /**
@@ -73,37 +55,30 @@ $GLOBALS['aider_index'] = array(
  * @uses aider_icone()
  *
  * @param string $aide
- *    clé d'identification de l'aide souhaitée
- * @param string $skel
- *    Nom du squelette qui appelle ce bouton d'aide
- * @param array $env
- *    Environnement du squelette
- * @param bool $aide_spip_directe
- *    false : Le lien généré est relatif à notre site (par défaut)
- *    true : Le lien est réalisé sur spip.net/aide/ directement...
+ *    clé d'identification du groupe d'aide souhaité. Peut indiquer une entrée spécifique. 
+ *    Tel que 'raccourcis' ou 'raccourcis/liens'
  * @return string
+ *    icone et lien… 
+ *    vide si on ne trouve pas le groupe d'aide demandé.
  **/
-function inc_aide_dist($aide = '', $skel = '', $env = array(), $aide_spip_directe = false) {
-
-	if (($skel = basename($skel))
-		and isset($GLOBALS['aider_index'][$skel])
-		and isset($GLOBALS['aider_index'][$skel][$aide])
-	) {
-		$aide = $GLOBALS['aider_index'][$skel][$aide];
+function inc_aide_dist($aide = '') : string {
+	$index = aide_index();
+	if (!$aide) {
+		// pour le moment rien sur entrée vide...
+		return "";
 	}
 
-	if ($aide_spip_directe) {
-		// on suppose que spip.net est le premier present
-		// dans la liste des serveurs. C'est forcement le cas
-		// a l'installation tout du moins
-		$help_server = $GLOBALS['help_server'];
-		$url = array_shift($help_server) . '/';
-		$url = parametre_url($url, 'exec', 'aide');
-		$url = parametre_url($url, 'aide', $aide);
-		$url = parametre_url($url, 'var_lang', $GLOBALS['spip_lang']);
-	} else {
-		$args = "aide=$aide&var_lang=" . $GLOBALS['spip_lang'];
-		$url = generer_url_ecrire('aide', $args);
+	$aide = explode('/', $aide, 2);
+	$groupe = array_shift($aide);
+	$entree = $aide ? reset($aide) : '';
+	if (!isset($index[$groupe])) {
+		return "";
+	}
+
+	$url = generer_url_ecrire('aide');
+	$url = parametre_url($url, 'aide', $groupe, '&');
+	if ($entree) {
+		$url = parametre_url($url, 'entree', $entree, '&');
 	}
 
 	return aider_icone($url);
@@ -141,180 +116,77 @@ function aider_icone($url, $clic = '') {
 	. '</a>';
 }
 
-/**  Les sections d'un fichier aide sont reperées ainsi. */
-define('_SECTIONS_AIDE', ',<h([12])(?:\s+class="spip")?' . '>([^/]+?)(?:/(.+?))?</h\1>,ism');
-/**
- * Création des fichiers de l'aide de SPIP
- *
- * @uses _DIR_AIDE
- * @uses _SECTIONS_AIDE
- *
- * @uses copie_locale()
- * @uses aide_fixe_img()
- * @uses aide_section()
- *
- * @param string $path
- * @param array $help_server
- * @return array
- */
-function aide_fichier($path, $help_server) {
 
-	$md5 = md5(serialize($help_server));
-	$fichier_aide = _DIR_AIDE . substr($md5, 0, 16) . '-' . $path;
-	$lastm = @filemtime($fichier_aide);
-	$lastversion = @filemtime(_DIR_RESTREINT . 'inc_version.php');
-	$here = @(is_readable($fichier_aide) and ($lastm >= $lastversion));
-	$contenu = '';
 
-	if ($here) {
-		lire_fichier($fichier_aide, $contenu);
-
-		return array($contenu, $lastm);
-	}
-
-	// mettre en cache (tant pis si echec)
-	sous_repertoire(_DIR_AIDE, '', '', true);
-	$contenu = array();
-	include_spip('inc/distant');
-	foreach ($help_server as $k => $server) {
-		// Remplacer les liens aux images par leur gestionnaire de cache
-		$url = "$server/$path";
-		$local = _DIR_AIDE . substr(md5($url), 0, 8) . '-' . preg_replace(',[^\w.]+,i', '_', $url);
-		$local = _DIR_RACINE . copie_locale($url, 'modif', $local);
-
-		lire_fichier($local, $page);
-		$page = aide_fixe_img($page, $server);
-		// les liens internes ne doivent pas etre deguises en externes
-		$url = parse_url($url);
-		$re = '@(<a\b[^>]*\s+href=["\'])' .
-			'(?:' . $url['scheme'] . '://' . $url['host'] . ')?' .
-			$url['path'] . '([^"\']*)@ims';
-		$page = preg_replace($re, '\\1\\2', $page);
-
-		preg_match_all(_SECTIONS_AIDE, $page, $sections, PREG_SET_ORDER);
-		// Fusionner les aides ayant meme nom de section
-		$vus = array();
-		foreach ($sections as $section) {
-			list($tout, $prof, $sujet, ) = $section;
-			if (in_array($sujet, $vus)) {
-				continue;
-			}
-			$corps = aide_section($sujet, $page, $prof);
-			foreach ($contenu as $k => $s) {
-				if ($sujet == $k) {
-					// Section deja vue qu'il faut completer
-					// Si le complement a des sous-sections,
-					// ne pas en tenir compte quand on les rencontrera
-					// lors des prochains passages dans la boucle
-					preg_match_all(_SECTIONS_AIDE, $corps, $s, PREG_PATTERN_ORDER);
-					if ($s) {
-						$vus = array_merge($vus, $s[2]);
-					}
-					$contenu[$k] .= $corps;
-					$corps = '';
-					break;
-				}
-			}
-			// Si totalement nouveau, inserer le titre
-			// mais pas le corps s'il contient des sous-sections:
-			// elles vont venir dans les passages suivants
-			if ($corps) {
-				$corps = aide_section($sujet, $page);
-				$contenu[$sujet] = $tout . "\n" . $corps;
-			}
+// Affichage du menu de gauche avec analyse de la section demandee
+function aide_data(string $groupe) : array {
+	static $menu = [];
+	if (!isset($menu[$groupe])) {
+		include_spip('inc/aide');
+		$index = aide_index();
+		$entrees = $index[$groupe] ?? null;
+		if ($entrees === null) {
+			// le groupe est introuvable…
+			return $menu[$groupe] = [];
+		}
+		$menu[$groupe] = [
+			'titre' => _T('aide:' . $groupe),
+			'intro' => aide_contenu($groupe, '_intro'),
+			'entrees' => [],
+		];
+		foreach ($entrees as $entree) {
+			$menu[$groupe]['entrees'][] = [
+				'titre' => _T('aide:' . $groupe . '_' . $entree),
+				'groupe' => $menu[$groupe]['titre'],
+				'texte' => aide_contenu($groupe, $entree),
+			];
 		}
 	}
-
-	$contenu = '<div>' . join('', $contenu) . '</div>';
-
-	// Renvoyer les liens vraiment externes dans une autre fenetre
-	$contenu = preg_replace(
-		'@<a href="(http://[^"]+)"([^>]*)>@',
-		'<a href="\\1"\\2 target="_blank">',
-		$contenu
-	);
-
-	// Correction typo dans la langue demandee
-	#changer_typo($lang_aide);
-	$contenu = '<body>' . $contenu . '</body>';
-
-	if (strlen($contenu) <= 100) {
-		return array(false, false);
-	}
-	ecrire_fichier($fichier_aide, $contenu);
-
-	return array($contenu, time());
-}
-
-/**
- * Générer l'url des images de l'aide
- *
- * @param  string|array $args
- *     Arguments à transmettre à l'URL :
- *     - string : tel que `arg1=yy&arg2=zz`
- *     - array :  tel que `array( arg1 => yy, arg2 => zz )`
- * @return string
- *     URL
- */
-function generer_url_aide_img($args) {
-	return generer_url_action('aide_img', $args, false, true);
-}
-
-
-/** Les aides non mises à jour ont un vieux Path à remplacer
- *
- * @note (mais ce serait bien de le faire en SQL une bonne fois)
- */
-define('_REPLACE_IMG_PACK', "@(<img([^<>]* +)?\s*src=['\"])img_pack\/@ims");
-
-/**
- * Remplacer les URL des images par l'URL du gestionnaire de cache local
- *
- * @uses _REPLACE_IMG_PACK
- * @uses _DIR_IMG_PACK
- *
- * @param string $contenu
- * @param string $server
- * @return string
- */
-function aide_fixe_img($contenu, $server) {
-	$html = '';
-	$re = "@(<img([^<>]* +)?\s*src=['\"])((AIDE|IMG|local)/([-_a-zA-Z0-9]*/?)([^'\"<>]*))@imsS";
-	while (preg_match($re, $contenu, $r)) {
-		$p = strpos($contenu, $r[0]);
-		$i = $server . '/' . $r[3];
-		$html .= substr($contenu, 0, $p) . $r[1] . $i;
-		$contenu = substr($contenu, $p + strlen($r[0]));
-	}
-	$html .= $contenu;
-
-	// traiter les vieilles doc
-	return preg_replace(_REPLACE_IMG_PACK, "\\1" . _DIR_IMG_PACK, $html);
+	return $menu[$groupe];
 }
 
 
 /**
- * Extraire une section d'aide
- *
- * Extraire la seule section demandée, qui commence par son nom entourée d'une
- * balise h2 et se termine par la prochaine balise h2 ou h1 ou le /body final.
- *
- * @param string $aide
- *            Titre de la section d'aide
- * @param string $contenu
- * @param int $prof
- *            Dans quel hn doit-on mettre le titre de section
- * @return string
+ * Retrouve le contenu d'une aide demandée
  */
-function aide_section($aide, $contenu, $prof = 2) {
-	$maxprof = ($prof >= 2) ? '12' : '1';
-	$r = "@<h$prof" . '(?: class="spip")?' . '>\s*' . $aide
-		. "\s*(?:/.+?)?</h$prof>(.*?)<(?:(?:h[$maxprof])|/body)@ism";
-
-	if (preg_match($r, $contenu, $m)) {
-		return $m[1];
+function aide_contenu(string $groupe, string $entree) : string {
+	$langues = aide_langues();
+	foreach ($langues as $lang) {
+		$aide_entree = find_in_path("aide/$lang/$groupe/$entree.spip");
+		if ($aide_entree) {
+			lire_fichier($aide_entree, $content);
+			return $content;
+		}
 	}
-
-#	spip_log("aide inconnue $r dans " . substr($contenu, 0, 150));
 	return '';
+}
+
+/**
+ * Retourne la liste des langues dans laquelle une aide est cherchée
+ * On part par défaut de spip_lang
+ * 
+ * pt_br => pt => langue_du_site => langue_par_defaut => fr
+ */
+function aide_langues($lang = null) : array {
+	if ($lang === null) {
+		$lang = $GLOBALS['spip_lang'];
+	}
+	static $langues = [];
+	if (!isset($langues[$lang])) {
+		$_langues = [$lang];
+		if (strpos($lang, '_') !== false) {
+			$l = explode('_', $lang);
+			while (count($l) > 1) {
+				array_pop($l);
+				$_langues[] = implode('_', $l);
+			}
+		}
+
+		$_langues[] = $GLOBALS['meta']['langue_site'];
+		$_langues[] = _LANGUE_PAR_DEFAUT;
+		$_langues[] = 'fr';
+		$_langues = array_unique($_langues);
+		$langues[$lang] = $_langues;
+	}
+	return $langues[$lang];
 }

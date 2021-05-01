@@ -1,0 +1,49 @@
+
+<!-- ig br -->
+
+Une note de bas de page est, habituellement, signalée par un
+numéro placé à l'intérieur du texte,
+numéro repris en bas de page et proposant un complément
+d'information.
+
+Dans SPIP, cette fonctionnalité (assez lourde à
+gérer manuellement en HTML) est automatisée: les notes
+sont numérotées par SPIP, qui gère
+également des liens hypertextes à l'intérieur du
+document pour passer directement de l'appel de note au texte de la
+note correspondante, et vice-versa.
+
+Une note de bas de page est indiquée, dans SPIP, entre doubles
+crochets: «<HTML><TT>Une note[[Voici un complément
+d'information.]] de bas de page.</TT></HTML>» sera
+affiché sous la forme: «Une note[[Voici un
+complément d'information.]] de bas de page.»
+
+
+{{{Des notes non automatiques}}}
+
+Dans la plupart des cas, le système de notes automatiques
+indiqué ci-dessus suffit amplement. Cependant, vous pouvez
+gérer les notes d'une manière non automatique en «forçant» 
+le choix du numéro ou de la mention affichée pour réaliser le lien.
+
+Le principe général consiste à indiquer votre choix de la mention utilisée
+entre chevrons au début de la note:
+<cadre>Une note «forcée»[[<xxx> Le texte de la note.]]</cadre>
+
+Sur ce principe:
+<cadre>vous pouvez utiliser les notes numérotées automatiques[[En plaçant le texte de la note entre crochets.]],
+- mais aussi forcer la numérotation de la note[[<23> En indiquant le numéro de la note entre les symboles «<» et «>».]],
+- utiliser des notes sous forme d'astérisques [[<*> En plaçant simplement une astérisque entre les symboles «<» et «>».]],
+- fabriquer des notes sans références (non numérotées); attention, de telles notes ne présentent plus de lien entre la note et l'appel de note[[<> En n'indiquant rien entre les symboles «<» et «>».]],
+- donner un nom (en toutes lettres) à une note; cet usage est très répandu pour les références bibliographiques[[<Rab> François Rabelais.]];
+- rappeler une note déjà existante[[<23>]] en indiquant le numéro de cette note entre les symboles «<» et «>» et en laissant vide le reste de la note.</cadre>
+
+donne:
+
+<quote>vous pouvez utiliser les notes numérotées automatiques[[En plaçant le texte de la note entre crochets.]],
+- mais aussi forcer la numérotation de la note[[<23> En indiquant le numéro de la note entre les symboles «<» et «>».]],
+- utiliser des notes sous forme d'astérisques [[<*> En plaçant simplement une astérisque entre les symboles «<» et «>».]],
+- fabriquer des notes sans références (non numérotées); attention, de telles notes ne présentent plus de lien entre la note et l'appel de note[[<> En n'indiquant rien entre les symboles «<» et «>».]],
+- donner un nom (en toutes lettres) à une note; cet usage est très répandu pour les références bibliographiques[[<Rab> François Rabelais.]];
+- rappeler une note déjà existante[[<23>]] en indiquant le numéro de cette note entre les symboles «<» et «>». et en laissant vide le reste de la note.</quote>

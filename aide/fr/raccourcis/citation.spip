@@ -1,0 +1,20 @@
+<!-- ig br -->
+
+Il est souvent pratique, dans un forum de discussion, de citer un extrait du message auquel on 
+est en train de répondre. Pour homogénéiser la présentation de telles citations, SPIP propose le raccourci
+<html><tt>&lt;quote>...&lt;/quote></tt></html>. 
+
+Par exemple:
+
+<cadre>
+<quote>C'est drôlement bien, SPIP.</quote>
+
+Kikou, je suis bien d'accord :-)
+</cadre>
+
+donne:
+
+<quote><quote>C'est drôlement bien, SPIP.</quote>
+
+Kikou, je suis bien d'accord :-)</quote>
+

@@ -1,0 +1,65 @@
+<!-- ig br -->
+
+Certains utilisateurs de SPIP veulent parfois afficher du code informatique dans leurs pages. 
+Le raccourci <HTML><TT>&lt;code>...&lt;/code></TT></HTML> est là pour ça.
+
+Exemple : <cadre> <code><?php     // ceci est du langage php
+      echo "bonjour";
+</code>
+</cadre>
+donne 
+<quote>
+<code><?php     // ceci est du langage php
+      echo "bonjour";
+</code>
+</quote>
+
+Il existe un autre raccourci pour publier des extraits de code informatique de plusieurs lignes:
+<html><tt>&lt;cadre>...&lt;/cadre></tt></html>. Cela place le code dans un «formulaire» (ceci est souvent utilisé
+sur la présente page). L'avantage de cette méthode est de faciliter grandement le copier-coller à partir
+de votre page Web: il suffit de placer le curseur à l'intérieur du code, de faire «tout sélectionner» (ctrl-A)
+pour pouvoir copier directement le code. De plus sur de nombreux butineurs, ce cadre permet de
+bien restituer les tabulations en début de ligne.
+
+ Voici un exemple:
+<cadre>
+class Texte {
+	var 
+type = 'texte';
+	var 
+texte;
+}
+
+ class Champ {
+	var 
+type = 'champ';
+	var 
+nom_champ, 
+id_champ;
+	var 
+cond_avant, 
+cond_apres; // tableaux d'objets
+	var 
+fonctions;
+}
+</cadre>
+
+
+{{{Court-circuiter les raccourcis SPIP}}}
+
+Dans certains cas, il peut être utile d'indiquer à SPIP 
+que certaines parties d'un document ne doivent pas être 
+«traitées» par le filtre des raccourcis 
+typographiques: vous ne voulez pas corriger la typographie, vous devez afficher 
+du code source (par exemple en PHP, JavaScript...)...
+
+Le code de ce raccourci est: 
+<cadre><HTML>texte à ne 
+pas transformer; attention!</HTML>
+</cadre>
+ce qui donne: 
+<quote>
+<HTML>texte à ne pas transformer; attention!</HTML>
+</quote>
+(ici, notez l'absence d'espaces avant le point-virgule et le point 
+d'exclamation).

@@ -1,0 +1,45 @@
+<!-- ig br -->
+
+- Un simple retour à la ligne s'obtient en tapant <tt>_</tt> (le trait
+de soulignement ou {underscore}) au début de la ligne, suivi d'une espace.
+
+{N.B.} En typographie classique, le simple retour à la ligne est très rare (limité essentiellement à la poésie). On le confond souvent avec le changement de paragraphe tel qu'il est affiché sur les documents imprimés (sans espacement vertical entre les paragraphes), alors que, par défaut, les butineurs Web insèrent un espacement entre les paragraphes. Beaucoup d'utilisateurs cherchent à reproduire cette caractéristique de l'imprimé (pas d'espacement vertical) en insérant de simples retours à la ligne entre ce qu'ils considèrent être des paragraphes; cela est un erreur qui risque de nuire à la facilité de maintenance et d'évolution de leur site. La solution consiste à définir, dans les squelettes, une feuille de style (CSS) décrivant le comportement des paragraphes (c'est-à-dire, selon les choix, pas d'espacement vertical entre les paragraphes, indentation de la première ligne...).
+
+- On peut faire des {{énumérations imbriquées}} en
+ajoutant des étoiles après le tiret d'énumération.
+
+ Ainsi:
+
+ <cadre>
+-* Ton cheval est:
+-** alezan;
+-** bai;
+-** noir;
+-* mais mon lapin est:
+-** blanc;
+-*** angora; 
+-*** ou à poil ras.</cadre>
+ donne:
+ <quote>
+-* Ton cheval est:
+-** alezan;
+-** bai;
+-** noir;
+-* mais mon lapin est:
+-** blanc;
+-*** angora; 
+-*** ou à poil ras.</quote>
+
+- Enfin, on peut faire des {{listes numérotées}} en utilisant le <code>#</code>
+à la place de l'étoile:
+<cadre>
+-# premier
+-# deuxieme
+-# troisieme</cadre>
+
+donnera:
+
+<quote>
+-# premier
+-# deuxième
+-# troisième</quote>

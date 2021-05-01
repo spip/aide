@@ -1,0 +1,8 @@
+<!-- ig br -->
+
+Vous pouvez définir des «ancres HTML» afin de pouvoir construire un lien direct vers un point donné au milieu d'une page d'un site SPIP. Il suffit d'introduire le raccourci:
+<cadre>[direct<-]</cadre>
+
+et cela créera une ancre de nom <code>direct</code>. Ainsi, s'il s'agit, par exemple, de l'article 3723, l'URL <code>http://monsite/spip.php?page=article.php&id_article=3723#direct</code> conduira directement à l'endroit de l'article où est situé cette ancre. 
+
+Il est à noter que les ancres sont compatibles avec les [liens hypertexte à l'intérieur du site->#liensite]. Ainsi, le raccourci «<code>[ce point précis->art123#precis]</code>» conduira vers l'ancre nommée «<code>precis</code>» défini dans l'article 123. 
