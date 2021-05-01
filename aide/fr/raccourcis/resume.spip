@@ -1,9 +1,9 @@
 
-<pre><code class="spip_typo">
+<pre><code class="language-spip_typo">
 {{{ Un intertitre }}}
 
 Du texte avec {de l'italique} et {{du gras}} ou un {{ {mélange des deux} }}.
-_ un retour à la ligne avec [un lien externe->https://www.spip.net] et [un lien interne->art12] avec un titre automatique [->rubrique10].
+Un retour à la ligne avec [un lien externe->https://www.spip.net] et [un lien interne->art12] avec un titre automatique [->rubrique10].
 
 Un autre paragraphe avec [[Une note en bas de page]] et un terme de [?glossaire].
 
@@ -28,12 +28,13 @@ La définition d'une arcre [direct<-] avec un lien pour y aller [->#direct].
 <quote>Une citation</quote>
 </code></pre>
 
-----
+
+
 
 {{{ Un intertitre }}}
 
 Du texte avec {de l'italique} et {{du gras}} ou un {{ {mélange des deux} }}.
-_ un retour à la ligne avec [un lien externe->https://www.spip.net] et [un lien interne->art12] avec un titre automatique [->rubrique10].
+Un retour à la ligne avec [un lien externe->https://www.spip.net] et [un lien interne->art12] avec un titre automatique [->rubrique10].
 
 Un autre paragraphe avec [[Une note en bas de page]] et un terme de [?glossaire].
 

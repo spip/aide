@@ -11,9 +11,28 @@
 }
 .aide_contenu {
 	padding: var(--spip-spacing-y) var(--spip-spacing-x);
+	max-width: 60em;
 }
 .aide_menu .navigation {
 	position: sticky; top: 1em;
+}
+.aide_contenu pre {
+	padding: var(--spip-spacing-y) var(--spip-spacing-x);
+	margin-left: calc(-1 * var(--spip-spacing-x));
+	margin-right: calc(-1 * var(--spip-spacing-x));
+	white-space: break-spaces;
+	border-radius: 0;
+	margin-bottom: var(--spip-spacing-y);
+}
+/* sans coloration code */
+.aide_contenu pre:not([class*="language-"]) {
+	background-color: var(--spip-color-gray-lightest);
+	border-top: 1px solid var(--spip-box-border-color);
+	border-bottom: 1px solid var(--spip-box-border-color);
+}
+.aide_contenu .texte pre:first-child {
+	margin-top: calc(-1 * var(--spip-spacing-y));
+	border-top:0;
 }
 </style>
 <div class="aide_conteneur">
