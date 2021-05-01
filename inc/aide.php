@@ -48,6 +48,16 @@ function aide_index() : array {
 	return $index;
 }
 
+/**
+ * Quelques mappages d'alias historiques <= SPIP 4
+ */
+function aide_index_alias_historiques() : array {
+	return [
+		'text_area' => 'raccourcis',
+		'chapo' => 'raccourcis',
+	];
+}
+
 
 /**
  * Générer un lien d'aide (icône + lien)
@@ -66,6 +76,11 @@ function inc_aide_dist($aide = '') : string {
 	if (!$aide) {
 		// pour le moment rien sur entrée vide...
 		return "";
+	}
+
+	$alias = aide_index_alias_historiques();
+	if (isset($alias[$aide])) {
+		$aide = $alias[$aide];
 	}
 
 	$aide = explode('/', $aide, 2);
