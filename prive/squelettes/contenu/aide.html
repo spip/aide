@@ -12,13 +12,16 @@
 .aide_contenu {
 	padding: var(--spip-spacing-y) var(--spip-spacing-x);
 }
+.aide_menu .navigation {
+	position: sticky; top: 1em;
+}
 </style>
 <div class="aide_conteneur">
 	#SET{data,#ENV{aide}|aide_data}
 	[(#GET{data}|oui)
 	<div class="aide_menu">
-		<h3>#GET{data/titre}</h3>
 		<div class="navigation">
+			<h3>#GET{data/titre}</h3>
 			<ul class="liste_items sous_navigation">
 			<BOUCLE_menu_entrees(DATA){source tableau, #GET{data/entrees}}>
 				<li class='item[ (#ENV{entree}|=={#CLE})on]'>
