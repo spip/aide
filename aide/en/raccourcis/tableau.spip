@@ -1,0 +1,48 @@
+<!-- ig br -->
+
+
+To create simple tables in SPIP, you just have to create lines with "cells" separated by the symbol "|" ({vertical bar}), making sure that the lines start and end with vertical bars too. It is imperative to leave blank lines before and after this table.
+
+For example, the table:
+
+| {{Surname}} | {{Forename}} | {{Age}} |
+| Smith | John | 23 years |
+| Captain | | not known |
+| Bloggs | Philip | 46 years |
+| Cadoc | Baby | 4 months |
+
+is coded like this:
+
+<cadre>
+
+| {{Surname}} | {{Forename}} | {{Age}} |
+| Smith | John | 23 years |
+| Captain | | not known |
+| Bloggs | Philip | 46 years |
+| Cadoc | Baby | 4 months |
+</cadre>
+
+Note that all the entries of the first row appear in bold. SPIP uses this identification to mean that this is the row containing the column headings and applies a presentation to it different from the other rows (different background colour). The presence of such a row is not mandatory. 
+
+You can also specify the optional caption and summary of the table. This information is quite important to make the table accessible, in particular, the summary gives a better view of the table without having to read through all the lines and columns.
+_ This information is specified between two vertical lines before the table like this:
+<cadre>
+
+||Caption|Summary||
+| {{Name}} | {{Date of birth}} | {{City}} |
+| Jacques | 5/10/1970 | Paris |
+| Claire | 12/2/1975 | Belfort |
+| Martin | 1/31/1957 | Nice |
+| Marie | 23/12/1948 | Perpignan |
+
+</cadre>
+and will be formatted as is:
+
+||Caption|Summary||
+| {{Name}} | {{Date of birth}} | {{City}} |
+| Jacques | 5/10/1970 | Paris |
+| Claire | 12/2/1975 | Belfort |
+| Martin | 1/31/1957 | Nice |
+| Marie | 23/12/1948 | Perpignan |
+
+You don't have to specify both fields. In the case of setting only the table summary, you need to remember to put the single vertical line before it. Like this: <code>|| | Summary ||</code>

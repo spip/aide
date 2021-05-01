@@ -1,0 +1,10 @@
+<!-- ig br -->   
+
+
+You can define "HTML anchors" within your text so that you can construct direct links into a specific section in the middle of a page of a SPIP site. This kind of shortcut is created like this one:
+<cadre>[direct<-]</cadre>
+
+and which will create an anchor named <code>direct</code> at that point in the text. So then for article 3723, the URL <code>http://mysite/article.php3?id_article=3723#direct</code> will link directly to the location in the article where that anchor has been inserted. 
+
+Note that anchors are also compatible with [hypertext links internal to the site->#liensite]. In this way, the shortcut "<code>[this exact point->art123#precis]</code>" will lead to the anchor named as "<code>precis</code>" defined within article 123. 
+

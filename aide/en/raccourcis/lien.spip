@@ -1,0 +1,82 @@
+<!-- ig br -->   
+
+
+You can easily create a hypertext link with the following code:
+<cadre>SPIP is an initiative from the [minirezo->http://www.minirezo.net/].</cadre>
+
+which becomes
+
+<quote>SPIP is an initiative from the [minirezo->http://www.minirezo.net/].</quote>
+
+(To help remember this: the dash followed by the greater-than sign makes a kind of arrow, showing that the link's text (before the arrow) "points to" an address.)
+
+The link's URL can be absolute (starting, as in this example, with <code>http://</code>), relative (to another page of the same site), a link to a document using an internet protocol (<code>ftp://</code>...) an e-mail address ("<code>[->mailto:minirezo@rezo.net]</code>")...
+
+Specific application: when nothing is entered before the "arrow", the text of the passed URL is displayed as a clickable link. For example:
+
+<cadre>[->http://dmoz.org/World/Deutsch/Kultur/Literatur/Autoren_und_Autorinnen/P/Proust,_Marcel/]</cadre>
+
+returns:
+ <quote>[->http://dmoz.org/World/Deutsch/Kultur/Literatur/Autoren_und_Autorinnen/P/Proust,_Marcel/]</quote>
+
+ Remember that in the case of very long URLs, the display is truncated (in order to avoid the degradation of your graphic interface), but the hypertext link points to the whole correct address.
+
+[liensite<-]
+
+
+It is possible to specify the language of the page that the link points to,
+which browsers may display as they so choose. To do this, just put the language code between braces. 
+
+ <cadre>[A site in French{fr}->http:///www.adresse.tld]</cadre>
+
+This is particularly recommended whenever the destination page is not in the same language as your current source text. 
+
+If you want to provide a lot of information about the link without excessively extending the clickable zone, you can provoke the appearance of a tool-tip instead by inserting the vertical bar sign | before the arrow, and follow it with the text that you want in the tool-tip:
+
+ <cadre>[see here|This link will tell you everything you ever wanted to know about some very complex process->http:///www.adresse.tld]</cadre>
+
+will display as <tt>see here</tt>, and the rest of the text will only appear when you move your mouse over the link.
+
+- {{Hypertext links inside the site}}
+
+Furthermore, this same hypertext links system makes it easy to create links inside your site with SPIP. The only trick consists of finding the {number} of the article or the section or the news item to which you want to link: <img src="AIDE/en/articlenumero.gif" alt="NUMERO"  border="0" align="right"> when you "visit" an article, a news item or a section in the private area, the left-hand column contains a box indicating this number in large digits.
+
+This is the number that you should insert in the hypertext link:
+
+-* Link to article 342 (4 possibilities):
+<HTML><TT>
+<br />link to [article->342]
+<br />link to [article->art342]
+<br />link to [article->article 342]
+<br /></tt></html>
+
+A particular use: <HTML><TT>[->art342]</tt></html> (no text before the "arrow") will automatically display the title of article 342 with a link to that article.
+
+-* Link to section 12:
+<HTML><TT>
+<br />link to [section->rub12]
+<br />link to [section->rubrique 12]
+</tt></html>
+
+-* Link to news item 65:
+<HTML><TT>
+<br />link to [news item->br65]
+<br />link to [news item->breve 65]
+<br />link to [news item->br&egrave;ve 65]
+</tt></html>
+
+-* Authors, keywords, sites, images, documents:
+<HTML><TT>
+<br />link to [an author->aut13] or [the same author->auteur13]
+<br />link to [a keyword->mot32]
+<br />link to [a syndicated site->site1]
+<br />link to [an attached document->doc17] or [the same document->document17]
+<br />link to [an image->img13] or [the same image->image13]
+</tt></html>
+
+Specific application: here too, we can put nothing before the "arrow" 
+(<html><tt>[->aut13]</tt></html>...). SPIP will automatically insert the required information. In the case of an attached document or an image, if we manually entered a title, that title will be displayed; otherwise, the file name itself will be used.
+
+<div align='right'>find out more: <a href='#glossaire'>links to a glossary</a>,
+_ [ancres nommées->#ancres].
+</div>

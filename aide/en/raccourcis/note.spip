@@ -1,0 +1,39 @@
+<!-- ig br -->   
+
+
+A footnote is usually indicated by a number inserted in the text then repeated at the bottom of the page and offering additional information.
+
+In SPIP, this feature (pretty awkward to manage manually in HTML) is automated: the footnotes are numbered by SPIP, which also manages the hypertext links inside the document to jump directly from the number to the corresponding footnote and vice versa.
+
+In SPIP, a footnote is placed between double brackets: "<HTML><TT>A[[Here is additional information.]] footnote.</TT></HTML>" will be displayed as: "A[[Here is additional information.]] footnote."
+
+
+
+{{{Non-automated notes}}}
+
+In most cases, the aforementioned	 system of automatic footnotes is quite enough. However, you may manage the footnotes in a non automatic fashion by "imposing" the choice of the number or even the displayed text used to craft the link.
+
+The general principle is that you put the clickable text between angle brackets at the beginning of the note, like this:
+
+<cadre>The text is annotated[[<xxx> This is the note.]]</cadre>
+
+Following this principle, you can:
+<cadre>
+- use automatically numbered notes[[By placing the text of the note between double square brackets.]], or
+- force the number of the note[[<23> By putting the number between angle brackets: < and >]], or
+- use asterisks to indicate a note[[<*> By putting an asterisk between the angle brackets < and >]], or
+- add notes without any visible link to/from the main text. You do this by[[<> Putting angle brackets <> with nothing between them.]], or
+- give an abbreviation or name as the link to the note; in some languages this is often used for references indicating authorship of quotations[[<Rab> Fran&ccedil;ois Rabelais.]], or
+- add a link to an existing note[[<23>]] by placing the number of the note between angle brackets, < and >, and giving no text to the note.
+</cadre>
+
+returns:
+
+<quote>
+- use automatically numbered notes[[By placing the text of the note between double square brackets.]], or
+- force the number of the note[[<23> By putting the number between angle brackets: < and >]], or
+- use asterisks to indicate a note[[<*> By putting an asterisk between the angle brackets < and >]], or
+- add notes without any visible link to/from the main text. You do this by[[<> Putting angle brackets <> with nothing between them.]], or
+- give an abbreviation or name as the link to the note; in some languages this is often used for references indicating authorship of quotations[[<Rab> Fran&ccedil;ois Rabelais.]], or
+- add a link to an existing note[[<23>]] by placing the number of the note between angle brackets, < and >, and giving no text to the note.
+</quote>

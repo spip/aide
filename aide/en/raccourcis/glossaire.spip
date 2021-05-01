@@ -1,0 +1,21 @@
+<!-- ig br -->   
+
+You can also very quickly create a hyperlink to a definition in an external glossary. For any given term, you simply insert this
+shortcut in your text <code>[?term]</code>.
+
+So the following code:
+"<code>{Frankenstein} is the masterpiece of [?Mary Shelley]</code>."
+will show on the screen:
+"{Frankenstein} is the masterpiece of [?Mary Shelley]."
+Remember to click the link in order to check that the term which has been entered (whether a name or common noun) is spelt correctly and links to a valid destination. 
+
+The default external glossary is [Wikipedia->http://www.wikipedia.org]. It is a multilingual encyclopaedia created co-operatively and opened to all contributors over the internet. Please take the time to acquaint yourself with it, to respect it and to contribute to it in order to enrich this shared fund of knowledge.
+
+You can also reference another glossary be inserting the # symbol after the term in question, followed by the name {G} of the glossary. SPIP will then apply the <tt>glossaire_</tt>{G} function to the term to obtain the link to be inserted.
+This function will have been entered into the <tt>mes_options.php</tt> file. If the name {G} ends with numerals, they will first be removed from that name, and will form the second argument to the function, which is very useful for a glossary that is divided into numbered sections. We would then write:
+
+<cadre>[?read#man2]</cadre>
+
+to indicate that we are referencing the explanation of the term <tt>read</tt> in section 2 of the glossary named as <tt>man</tt>.
+
+The shortcuts for referencing the language and creating a tool-tip, explained above for the external links, works just as well for glossary references as well.

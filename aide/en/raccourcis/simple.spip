@@ -1,0 +1,67 @@
+<!-- ig br -->   
+
+
+To start with, we present the simplest and most common shortcuts. For the users who wish to have more control over the layout of their texts, we will then later introduce some more complex versions of these shortcuts.
+
+{N.B.} The simple shortcuts fulfil most of the formatting requirements, and make online publication almost as easy as writing an email.
+
+- {{Automatic French typography}}
+
+SPIP automatically accommodates the standard rules for spacing in French typography (and some other languages) - it will insert unbreakable white space before any occurrence of the characters 
+":", ";", "!", and "?",
+and will insert unbreakable spaces before and after any phrases enclosed in «French style quotation marks».
+
+(Note: this functionality is ONLY activated if the principal language for the site is French.)
+
+- {{Creating paragraphs}}
+
+To create paragraphs, you simply leave a blank line, a bit like separating paragraphs in a e-mail (by "skipping" a line).
+
+The simple "line feed" (enter or return) without separating the two paragraphs is insufficient to create a new paragraph (as a matter of fact, it does not even create a line feed).
+
+You can leave several consecutive blank lines without any effect on the layout. The redundant blank lines will just be eliminated.
+
+- {{Creating bulleted or numbered lists}}
+
+You can create lists in SPIP in the same way as in an e-mail: you only need to enter a line feed and start the new line with a dash/hyphen ("-").
+
+Notice that, here, a simple line feed is enough (you can create
+lists in the same paragraph); but if you leave a blank line before the one beginning with a hyphen, then a blank line will appear before the list
+
+For example, <cadre>- I like work;
+- it fascinates me.
+- I can sit and look at it for hours.
+ (Jerome K. Jerome)</cadre> 
+will display:
+<quote>
+- I like work;
+- it fascinates me.
+- I can sit and look at it for hours.
+ (Jerome K. Jerome)
+</quote>
+<div align='right'><a href='#listes'>more information on the lists</a></div>
+
+Note here that this is just inserting a {bullet}, and is not creating a list  ([to create lists see->#listes])
+
+{{Bold and italic}}
+
+You specify a text in {italic} by placing it between simple braces: "<code>...some text {in italic} in...</code>».
+
+You specify a text in {{bold}} by placing it between double braces: "<code>...some text {{in bold}} in...</code>".
+
+- {{Paragraph headings}}
+
+Paragraph headings are titles inside a text that show its structure. In SPIP, they are very simply defined by placing them between treble braces: "<HTML><TT>{{{Section heading}}}</TT></HTML>" will display the heading, bold and centred: 
+
+<quote>{{{Section heading}}}</quote>
+
+- {{Horizontal rule}}
+
+It is very simple to insert a horizontal rule (or a separation line) across the width of the text: you just insert a line containing only a series of at least four hyphens, like this:
+
+<cadre>----</cadre>
+
+which will generate:
+<quote>
+----
+</quote>

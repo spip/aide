@@ -1,0 +1,16 @@
+<!-- ig br -->   
+
+It is often practical, in a discussion forum, to quote an excerpt from the message which we are replying to. To make the presentation of such quotes consistent, SPIP offers the shortcut
+<html><tt>&lt;quote>...&lt;/quote></tt></html>.
+
+For example:
+
+<cadre><quote>Pretty good that SPIP.</quote>
+
+Right you are, rubber duck :-)</cadre>
+
+gives:
+
+<quote><quote>Pretty good that SPIP.</quote>
+
+Right you are, rubber duck :-)</quote>

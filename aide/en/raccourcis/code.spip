@@ -1,0 +1,44 @@
+<!-- ig br -->   
+
+
+Some users could wish at one point to display programming code in their pages. 
+The shortcut <HTML><TT><code>...</code></tt></html> is available for this purpose.
+
+Example: <HTML><TT><code><?php &nbsp; &nbsp; //this is some php code<br>
+
+echo "hello";<br>
+?></code></TT></HTML> gives <code><?php  //this is some php code
+echo "hello";
+?></code>
+
+There is another shortcut to display extracts of programming code on several lines:
+<html><tt>&lt;cadre>...&lt;/cadre></tt></html>.This will put the code in a "form" (It is often used on this current page). The advantage of this method is to make it easier to copy-paste from you web page: you just have to move the cursor to the code you wish to copy, to choose "select all" to be able to directly copy the code. Furthermore, in many browsers, this frame (cadre) allows a better rendering of the tabs at the beginning of the lines.
+
+Here is an example:
+<cadre>
+class Text {
+ var 
+type = 'text';
+ var 
+text;
+}
+
+ class Field{
+ var 
+type = 'field';
+ var 
+field_name, 
+field_id;
+ var 
+cond_before, 
+cond_after; // table of objects
+ var 
+functions;
+}
+</cadre>
+
+{{Bypassing SPIP shortcuts}}
+
+In some cases, it can be useful to tell SPIP  that some parts of a document should not be "processed" by the typographical shortcuts filter: you do not want to correct the typography or you want to display source code (e.g. in PHP, JavaScript...).
+
+The code of this shortcut is: "<HTML><TT>&lt;HTML&gt;Warning; text to leave as is&lt;/HTML&gt;</TT></HTML>", which gives: "<HTML>Warning; text to leave as is</HTML>".

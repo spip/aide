@@ -1,0 +1,47 @@
+<!-- ig br -->   
+
+
+- {{Advanced management of lists and enumerations}}
+
+- A simple carriage return can be performed by typing <tt>_</tt> 
+(the underscore symbol) at the beginning of the line, followed by a blank space.
+
+{N.B.} In traditional typography, use of a "new line" by itself is very rare (restricted, more or less, to poetry). It is often confused with a new paragraph as found in printed documents (with no additional vertical spacing between the paragraphs). Web browsers however, by default, insert a vertical spacing between paragraphs. Many users try to emulate the look of the printed page (no additional vertical spacing) by typing a simple line feed between what they consider to be paragraphs. This is an error which can make their site more difficult to maintain and develop. The correct solution is to define a stylesheet (CSS) in your templates which describes the layout behaviour of paragraphs (i.e. whether or not there is an additional vertical space between paragraphs, the amount of indentation of the first line, etc.).
+
+- You can create nested lists by adding asterisks after the list hyphen.
+
+For example:
+
+<cadre>
+-* Your horse is:
+-** chestnut;
+-** bay;
+-** black;
+-* but my rabbit is
+-** white:
+-*** angora
+-*** or short-haired.</cadre>
+ gives:
+ <quote>
+-* Your horse is:
+-** chestnut;
+-** bay;
+-** black;
+-* but my rabbit is
+-** white:
+-*** angora
+-*** or short-haired.</quote>
+
+- Lastly, ordered list can be made using the following symbol <code>#</code> instead of the asterisk:
+
+<cadre>
+-# first
+-# second
+-# third</cadre>
+
+returns:
+
+<quote>
+-# first
+-# second
+-# third</quote>
