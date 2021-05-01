@@ -1,6 +1,7 @@
 <?php
 
 $GLOBALS[$GLOBALS['idx_lang']] = array(
+    'aides' => 'Aides',
 
     'raccourcis' => 'Raccourcis typographiques',
     'raccourcis_ancre' => 'Ancres nommées',

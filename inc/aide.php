@@ -90,13 +90,19 @@ function inc_aide_dist($aide = '') : string {
 		return "";
 	}
 
+	$url = aide_generer_url($groupe, $entree);
+
+	return aider_icone($url);
+}
+
+/** Génère l'url d'une entrée d'aide */
+function aide_generer_url(string $groupe, ?string $entree = null) : string {
 	$url = generer_url_ecrire('aide');
 	$url = parametre_url($url, 'aide', $groupe, '&');
 	if ($entree) {
 		$url = parametre_url($url, 'entree', $entree, '&');
 	}
-
-	return aider_icone($url);
+	return $url;
 }
 
 /**
@@ -134,27 +140,42 @@ function aider_icone($url, $clic = '') {
 
 
 // Affichage du menu de gauche avec analyse de la section demandee
-function aide_data(string $groupe) : array {
+function aide_data(?string $groupe = null) : array {
 	static $menu = [];
 	if (!isset($menu[$groupe])) {
 		include_spip('inc/aide');
 		$index = aide_index();
-		$entrees = $index[$groupe] ?? null;
-		if ($entrees === null) {
-			// le groupe est introuvable…
-			return $menu[$groupe] = [];
-		}
-		$menu[$groupe] = [
-			'titre' => _T('aide:' . $groupe),
-			'intro' => aide_contenu($groupe, '_intro'),
-			'entrees' => [],
-		];
-		foreach ($entrees as $entree) {
-			$menu[$groupe]['entrees'][] = [
-				'titre' => _T('aide:' . $groupe . '_' . $entree),
-				'groupe' => $menu[$groupe]['titre'],
-				'texte' => aide_contenu($groupe, $entree),
+		if ($groupe === null) {
+			// juste un menu…
+			$menu[$groupe] = [
+				'titre' => _T('aide:aides'),
+				'entrees' => [],
 			];
+			foreach (array_keys($index) as $group) {
+				$menu[$groupe]['entrees'][] = [
+					'titre' => _T('aide:' . $group),
+					'link' => aide_generer_url($group),
+					'texte' => aide_contenu($group, '_intro'),
+				];
+			}
+		} else {
+			$entrees = $index[$groupe] ?? null;
+			if ($entrees === null) {
+				// le groupe est introuvable…
+				return $menu[$groupe] = [];
+			}
+			$menu[$groupe] = [
+				'titre' => _T('aide:' . $groupe),
+				'intro' => aide_contenu($groupe, '_intro'),
+				'entrees' => [],
+			];
+			foreach ($entrees as $entree) {
+				$menu[$groupe]['entrees'][] = [
+					'titre' => _T('aide:' . $groupe . '_' . $entree),
+					'groupe' => $menu[$groupe]['titre'],
+					'texte' => aide_contenu($groupe, $entree),
+				];
+			}
 		}
 	}
 	return $menu[$groupe];
