@@ -40,7 +40,7 @@ function aide_index() : array {
 	if ($index === null) {
 		$index = [];
 		$index['raccourcis'] = [
-			'simple', 'lien', 'note', 'citation', 
+			'resume', 'simple', 'lien', 'note', 'citation', 
 			'tableau', 'liste', 'glossaire', 'ancre', 'code'
 		];
 		$index = pipeline('aide_index', $index);

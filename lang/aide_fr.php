@@ -10,6 +10,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
     'raccourcis_lien' => 'Liens hypertextes',
     'raccourcis_liste' => 'Listes et énumérations',
     'raccourcis_note' => 'Notes de bas de page',
+    'raccourcis_resume' => 'En résumé',
     'raccourcis_simple' => 'Mise en forme simple',
     'raccourcis_tableau' => 'Tableaux',
 );
