@@ -41,7 +41,7 @@ function aide_index() : array {
 		$index = [];
 		$index['raccourcis'] = [
 			'simple', 'lien', 'note', 'citation', 
-			'tableau', 'liste', 'glossaire', 'ancre'
+			'tableau', 'liste', 'glossaire', 'ancre', 'code'
 		];
 		$index = pipeline('aide_index', $index);
 	}
