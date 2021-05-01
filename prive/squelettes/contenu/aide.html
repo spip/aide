@@ -22,7 +22,7 @@
 	<div class="aide_menu">
 		<div class="navigation">
 			<h3>#GET{data/titre}</h3>
-			<ul class="liste_items sous_navigation">
+			<ul class="liste_items">
 			<BOUCLE_menu_entrees(DATA){source tableau, #GET{data/entrees}}>
 				<li class='item[ (#ENV{entree}|=={#CLE})on]'>
 					<a href='#aide-#GROUPE-#CLE'>#TITRE</a>
