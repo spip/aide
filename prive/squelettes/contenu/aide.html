@@ -25,7 +25,7 @@
 			<ul class="liste_items sous_navigation">
 			<BOUCLE_menu_entrees(DATA){source tableau, #GET{data/entrees}}>
 				<li class='item[ (#ENV{entree}|=={#CLE})on]'>
-					<a href='#aide-#GROUPE-#CLE' class="ajax">#TITRE</a>
+					<a href='#aide-#GROUPE-#CLE'>#TITRE</a>
 				</li>
 			</BOUCLE_menu_entrees>
 			</ul>
