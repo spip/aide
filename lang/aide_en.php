@@ -1,8 +1,6 @@
 <?php
 
 $GLOBALS[$GLOBALS['idx_lang']] = array(
-    'aides' => 'Helps',
-
     'raccourcis' => 'Typographical shortcuts',
     'raccourcis_ancre' => 'Named anchors',
     'raccourcis_citation' => 'Quotes',

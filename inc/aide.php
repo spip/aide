@@ -148,7 +148,7 @@ function aide_data(?string $groupe = null) : array {
 		if ($groupe === null) {
 			// juste un menu…
 			$menu[$groupe] = [
-				'titre' => _T('aide:aides'),
+				'titre' => _T('icone_aide_ligne'),
 				'entrees' => [],
 			];
 			foreach (array_keys($index) as $group) {
