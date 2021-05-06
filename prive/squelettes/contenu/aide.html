@@ -56,7 +56,7 @@
 
 		<BOUCLE_content_entrees(DATA){source tableau, #GET{data/entrees}}>
 			<div id="aide-#GROUPE-#CLE"></div>
-			[(#SET{titre,[(#LINK|?{<a href="#LINK">#TITRE</a>,#TITRE})]})]
+			[(#SET{titre,[(#LINK|?{<a href="#LINK" class="ajax">#TITRE</a>,#TITRE})]})]
 			#BOITE_OUVRIR{#GET{titre},simple}
 				[<div class="texte">(#TEXTE)</div>]
 				[<div class="notes">(#NOTES)</div>]
