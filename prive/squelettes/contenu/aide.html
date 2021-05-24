@@ -42,7 +42,7 @@
 		<div class="navigation">
 			<h3>#GET{data/titre}</h3>
 			<ul class="liste_items">
-			<BOUCLE_menu_entrees(DATA){source tableau, #GET{data/entrees}}>
+			<BOUCLE_menu_entrees(DATA){source table, #GET{data/entrees}}>
 				<li class='item[ (#ENV{entree}|=={#CLE})on]'>
 					<a href='#aide-#GROUPE-#CLE'>#TITRE</a>
 				</li>
@@ -54,7 +54,7 @@
 		<h1>#GET{data/titre}</h1>
 		[<div class="introduction">(#GET{data/intro}|propre)</div>]
 
-		<BOUCLE_content_entrees(DATA){source tableau, #GET{data/entrees}}>
+		<BOUCLE_content_entrees(DATA){source table, #GET{data/entrees}}>
 			<div id="aide-#GROUPE-#CLE"></div>
 			[(#SET{titre,[(#LINK|?{<a href="#LINK" class="ajax">#TITRE</a>,#TITRE})]})]
 			#BOITE_OUVRIR{#GET{titre},simple}
