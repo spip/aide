@@ -1,0 +1,57 @@
+SPIP respeta automáticamente las principales reglas de espaciado de la tipografía francesa. Así, se añaden espacios imborrables antes de los caracteres
+«:», «;», «!», «?»~-,
+y sitúa espacios imborrables antes y después de las comillas «tipográficas».
+
+(Nota: esta característica sólo se activa en los sitios cuyo idioma principal sea el francés.)
+
+{{Crear párrafos}}
+
+Para crear párrafos, es suficiente dejar una línea vacía, un poco como se separan los párrafos en un email (se «salta» una línea).
+
+Un simple «salto de línea» (retorno de carro) sin separar los dos párrafos con una línea vacía no basta para causar un cambio de párrafo.
+
+Se pueden dejar varias líneas vacías seguidas sin que ello modifique la presentación.
+
+{{Crear listas o enumeraciones}}
+
+En SPIP se pueden fabricar listas de la misma manera que en un email: basta con cambiar de línea y comenzar la línea nueva con un guión («-»).
+
+Nota: aquí basta con un simple salto de línea (se pueden hacer enumeraciones dentro del mismo párrafo); pero si se «salta» una línea antes de la que comienza con un guión, se mostrará una línea vacía antes de la enumeración.
+
+
+Por ejemplo, <cadre>- Qu'est-ce que cela peut faire que je lutte pour la mauvaise cause 
+puisque je suis de bonne foi?
+- Et qu'est-ce que ça peut faire que je sois de mauvaise foi 
+puisque c'est pour la bonne cause. (Jacques 
+Prévert)</cadre> 
+se verá así:
+<quote>
+- Qu'est-ce que cela peut faire que je lutte pour la mauvaise cause puisque je suis de bonne foi?
+- Et qu'est-ce que ça peut faire que je sois de mauvaise foi
+puisque c'est pour la bonne cause. (Jacques Prévert)
+</quote>
+<div align='right'><a href='#listes'>más información acerca de las listas</a></div>
+
+Tenga en cuenta que se trata de insertar una {viñeta} y no de crear una lista ([más información acerca de las listas->#listas])
+
+{{Negrita y cursiva}}
+
+El texto {en cursiva} se indica sencillamente situándolo entre llaves simples: «<HTML><TT>...un texto {en cursiva} en...</TT></HTML>».
+
+El texto {{en negrita}} se indica poniéndolo entre llaves dobles: «<HTML><TT>...un texto {{en negrita}} en...</TT></HTML>».
+
+{{Intertítulos}}
+
+Los intertítulos son los títulos situados en el interior de un texto para indicar la estructura. En SPIP, se indica muy fácilmente situándolo entre llaves triples: «<HTML><TT>{{{El título de una parte}}}</tt></html>» mostrará el texto en negrita y centrado:
+<quote>{{{El título de una parte}}}</quote>
+
+- {{Trazo de separación horizontal}}
+
+Es muy fácil insertar una línea horizontal de separación con toda la longitud del texto: basta con situar una línea que sólo contenga una sucesión de al menos cuatro guiones, así:
+
+<cadre>----</cadre>
+
+lo que nos da:
+<quote>
+----
+</quote>

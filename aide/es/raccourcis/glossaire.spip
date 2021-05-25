@@ -1,0 +1,9 @@
+Por otra parte, se puede crear muy rápidamente un enlace de hipertexto hacia la definición de un término en un glosario externo; para un término dado, basta con insertar dentro de tu texto el atajo <code>[?término]</code>.
+
+Así el siguiente código:
+« <code>{En busca del tiempo perdido} es la principal obra de [?Marcel Proust]</code> »
+quedará al publicarlo:
+«{En busca del tiempo perdido} es la principal obra de [?Marcel Proust]».
+Piensa en pulsar sobre el enlace para comprobar que el término introducido (nombre propio o nombre común) está escrito correctamente y que apunta a un destino válido.
+
+El glosario externo predefinido es [Wikipedia->http://www.wikipedia.org]. Se trata de una enciclopedia multilingüe escrita de modo cooperativo, abierta a todas las colaboraciones a través de Internet. Toma tu tiempo para conocerla, respetarla y contribuir al enriquecimiento de este fondo de conocimiento compartido.

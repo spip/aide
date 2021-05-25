@@ -1,0 +1,55 @@
+<pre><code class="language-spip_typo">
+{{Un intertítulo}}
+
+Texto con {cursiva } y {{negrita}} o una {{combinación de las dos}}.
+Un salto de línea con [un enlace externo->https://www.spip.net] y [un enlace interno->art12] con un título automático [->rubrique10].
+
+Otro párrafo con [[Una nota a pie de página]] y un término del [?glosario].
+
+-* Una lista
+-* Una lista
+-** Elemento de la sublista
+
+-# Una lista ordenada
+-# Una lista ordenada
+-## Elemento de lista ordenada subordinada
+
+Trazo de separación horizontal
+----
+
+Una tabla
+| {{ Lieu }} | {{ Action }} |
+| Les grottes | Spip Party |
+| Toulouse | Spip en rose |
+
+La definición de un ancla [directo<-] con un enlace para ir allí [->#directo].
+
+<cita>Una cita</cita>
+</code></pre>
+
+{{Un intertítulo}}
+
+Texto con {cursiva } y {{negrita}} o una {{combinación de las dos}}.
+Un salto de línea con [un enlace externo->https://www.spip.net] y [un enlace interno->art12] con un título automático [->rubrique10].
+
+Otro párrafo con [[Una nota a pie de página]] y un término del [?glosario].
+
+-* Una lista
+-* Una lista
+-** Elemento de la sublista
+
+-# Una lista ordenada
+-# Una lista ordenada
+-## Elemento de lista ordenada subordinada
+
+Trazo de separación horizontal
+----
+
+Una tabla
+| {{ Lieu }} | {{ Action }} |
+| Les grottes | Spip Party |
+| Toulouse | Spip en rose |
+
+La definición de un ancla [directo<-] con un enlace para ir allí [->#directo].
+
+<cita>Una cita</cita>

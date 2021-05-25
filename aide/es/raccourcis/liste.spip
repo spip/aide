@@ -1,0 +1,36 @@
+Se pueden crear enumeraciones ramificadas añadiendo asteriscos tras el guión de enumeración.
+
+ Así:
+
+ <cadre>
+-* Tu caballo es:
+-** alazán;
+-** bayo;
+-** negro;
+-* pero mi conejo es
+-** blanco:
+-*** de angora 
+-*** o de pelo corto.</cadre>
+ produce:
+ <quote>
+-* Tu caballo es:
+-** alazán;
+-** bayo;
+-** negro;
+-* pero mi conejo es
+-** blanco:
+-*** de angora 
+-*** o de pelo corto.</quote>
+
+- Para terminar, se pueden crear listas numeradas usando el carácter <code>#</code> en lugar del asterisco:
+<cadre>
+-# primero
+-# segundo
+-# tercero</cadre>
+
+nos dará:
+
+<quote>
+-# primero
+-# segundo
+-# tercero</quote>

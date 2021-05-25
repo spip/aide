@@ -1,0 +1,13 @@
+En un foro de discusión, a veces es práctico poder citar un trozo del mensaje al que se está respondiendo. Para homogeneizar la presentación de tales citas, SPIP ofrece el atajo <html><tt>&lt;quote>...&lt;/quote></tt></html>.
+
+Por ejemplo:
+
+<cadre><quote>SPIP es tremendamente bueno.</quote>
+
+Kikou, estoy muy de acuerdo :-)</cadre>
+
+queda así:
+
+<quote><quote>SPIP es tremendamente bueno.</quote>
+
+Kikou, estoy muy de acuerdo :-)</quote>

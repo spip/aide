@@ -1,0 +1,65 @@
+Un enlace hipertexto se crea fácilmente con el siguiente código:
+<cadre>SPIP es una iniciativa del [minirézo->http://www.minirezo.net/].</cadre>
+que se convierte en:
+<quote>SPIP es una iniciativa del [minirézo->http://www.minirezo.net/].</quote>
+(Mnemotécnica: un guión seguido por el signo «mayor que» crea una especie de fleche que indica que el texto del enlace (antes de la flecha) «apunta hacia» una dirección.) 
+
+La dirección del enlace puede ser una dirección absoluta (que comienza, como aquí, por <code>http://</code>), una dirección relativa (hacia otra página del mismo sitio), un enlace hacia un documento utilizando un protocolo de Internet (<code>ftp://</code>...), una dirección de email («<code>[->minirezo@rezo.net]</code>»)...
+
+Aplicación específica: puedes mostrar el texto completo de un enlace en forma de dirección URL, si no escribes nada antes de la «flecha». Por ejemplo:
+
+<cadre>[->http://dmoz.org/World/Deutsch/Kultur/Literatur/Autoren_und_Autorinnen/P/Proust,_Marcel/]</cadre>
+muestra lo siguiente:
+
+ 
+ <quote>[->http://dmoz.org/World/Deutsch/Kultur/Literatur/Autoren_und_Autorinnen/P/Proust,_Marcel/]</quote>
+
+Fíjate que, en el caso de las URL muy largas, se trunca su visualización (para evitar que se degrade tu interfaz gráfica); pero el enlace hipertexto apunta hacia la dirección buena.
+
+[liensite<-]
+- {{Enlaces de hipertexto hacia el interior del sitio}}
+
+El propio sistema de enlaces de hipertexto facilita, además, la creación de enlaces hacia el interior de tu sitio bajo SPIP. La única sutileza consiste en buscar el {número} del artículo, de la sección, o de la noticia breve hacia la que quieres dirigir tu enlace de hipertexto:
+<img src="AIDE/fr/articlenumero.gif" alt="NUMERO" border="0" align="right">
+Cuando «visitas», en el espacio privado, un artículo, una breve o una rubrique, la columna de la izquierda contiene un bloque que indica este número en grandes caracteres.
+
+Este es el número que tienes que indicar en el enlace de hipertexto:
+
+-* Enlace hacia el artículo 342 (cuatro posibilidades):}
+<HTML><TT>
+<BR>enlace hacia [el artículo->342]
+<BR>enlace hacia [el artículo->art342]
+<BR>enlace hacia [el artículo->article 342]
+<BR></tt></html>
+Aplicación específica: <HTML><TT>[->art342]</tt></html> (sin indicar nada antes de la «flecha») mostrará automáticamente el título del artículo 342 con un enlace hacia ese artículo.
+
+-* Enlace hacia la sección 12:}
+<HTML><TT>
+<BR>enlace hacia [la sección->rub12]
+<BR>enlace hacia [la sección->rubrique 12]
+</tt></html>
+
+-* Enlace hacia la breve 65:}
+<HTML><TT>
+<BR>enlace hacia [la breve->br65]
+<BR>enlace hacia [la breve->breve 65]
+<BR>enlace hacia [la breve->brève 65]
+</tt></html>
+
+-* Autores, palabras clave, sitios, imágenes, documentos:}
+<HTML><TT>
+<BR>enlace hacia [un autor->aut13] o [ese mismo autor->auteur13]
+<BR>enlace hacia [una palabra->mot32]
+<BR>enlace hacia [un sitio sindicado->site1]
+<BR>enlace hacia [un documento adjunto->doc17] o [ese mismo documento->document17]
+<BR>enlace hacia [una imagen->img13] o [esa misma imagen->image13]
+<BR>
+</tt></html>
+
+Aplicación específica: también aquí es posible no especificar nada antes de la «flecha» 
+(<html><tt>[->aut13]</tt></html>...).
+SPIP insertará automáticamente la información necesaria. En el caso de un documento adjunto o de una imagen, si se le ha puesto manualmente un título, se mostrará este; si no, se usará el propio nombre del fichero.
+
+<div align='right'>para saber más: <a href='#glossaire'>enlaces hacia un glosario</a>,
+_ [anclas con nombre->#ancres].
+</div>

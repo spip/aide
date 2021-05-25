@@ -1,0 +1,53 @@
+Ciertos usuarios de SPIP quizás quieran mostrar código informático en sus páginas. El atajo <HTML><TT>&lt;code&gt;...&lt;/code&gt;</TT></HTML> sirve para eso.
+
+Ejemplo:<cadre> <code><?php     // esto es lenguaje ph
+      echo "hola";
+?></code>
+</cadre>
+nos da
+<quote>
+<code><?php     // esto es lenguaje ph
+      echo "hola";
+?></code>
+</quote>
+
+Existe otro atajo para publicar extractos de código informático en varias líneas:
+<html><tt>&lt;cadre&gt;...&lt;/cadre&gt;</tt></html>. Esto sitúa el código en un «formulario» (esto se usa a menudo en la página actual). La ventaja de este método es que facilita mucho el copiar y pegar desde tu página Web: basta con situar el cursor dentro del código, y ejecutar «seleccionar todo» (alt-A) para poder copiar el código directamente. Además, con numerosos navegadores, este cuadro permite recuperar bien las tabulaciones del principio de línea.
+
+Veamos un ejemplo:
+<cadre>
+class Texte {
+	var 
+type = 'texte';
+	var 
+texte;
+}
+
+ class Champ {
+	var 
+type = 'champ';
+	var 
+nom_champ, 
+id_champ;
+	var 
+cond_avant, 
+cond_apres; // tablas de objetos
+	var 
+fonctions;
+}
+</cadre>
+
+{{Saltarse los atajos de SPIP}}
+
+En algunos casos, puede ser útil indicarle a SPIP que ciertas partes de un documento no deben ser «tratadas» por el filtro de los atajos tipográficos: no se quiere corregir la tipografía, se desea presentar código fuente (por ejemplo en PHP, JavaScript...), etc.
+
+Es código de este atajo es: 
+<cadre><HTML>texto que no hay
+que cambiar; [[¡cuidado!]]</HTML>
+</cadre>»
+ que nos da:
+<quote>
+<HTML>texto que no hay que cambiar; [[¡cuidado!]]</HTML>
+<quote>
+(fíjate en que no se crea una nota. Si la página estuviese en francés, tampoco añadiría espacios imborrables antes del punto y coma, ni del signo de exclamación).
+

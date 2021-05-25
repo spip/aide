@@ -1,0 +1,6 @@
+Puedes definir «anclas HTML» para construir un enlace directo hacia un punto dado en mitad de una página de un sitio SPIP. Basta con introducir el atajo:
+<cadre>[direct<-]</cadre>
+
+el cual creará un ancla de nombre <code>direct</code>. Así, si tenemos, por ejemplo, el artículo 3723, la URL <code>http://mi.sitio/article.php3?id_article=3723#direct</code> conducirá directamente al lugar del artículo donde esté situado este ancla. 
+
+Hay que destacar que las anclas son compatibles con los [enlaces de hipertexto al interior del sitio->#liensite]. De este modo, el atajo «<code>[este punto exacto->art123#exacto]</code>» conducirá al ancla llamada «<code>exacto</code>» definida en el artículo 123. 

@@ -1,0 +1,33 @@
+Una nota de pie de página se marca, a menudo, con un número colocado dentro del texto, número repetido al final de la página para ofrecer un complemento a la información.
+
+En SPIP, esta característica (bastante pesada de manejar manualmente en HTML) ha sido automatizada: las notas se numeran por SPIP, que igualmente gestiona los enlaces de hipertexto dentro del documento para pasar directamente desde la llamada de la nota al texto de la
+nota correspondiente, y viceversa.
+
+Une nota de pie de página, en SPIP, se marca entre corchetes dobles: «<HTML><TT>Una nota[[Esto es un complemento informativo.]] de pie de página.</TT></HTML>» se verá de esta forma: «Una nota[[Esto es un complemento informativo.]] de pie de página.»
+
+<div align='right'><a href='#notes'>para saber más: notas no automáticas</a></div>
+
+{{Las notas no automáticas}}
+
+
+En la mayor parte de los casos, el sistema de notas automáticas señalado antes es ampliamente suficiente. No obstante, puedes gestionar las notas de manera no automática «forzando» la elección del número o del texto mostrado para realizar el enlace.
+
+El principio general consiste en indicar tu elección del texto utilizado entre los signos «menor que» y «mayor que» al principio de la nota:
+<cadre>Una nota «forzada»[[<xxx> El texto de la nota.]]</cadre>
+
+Siguiendo este principio:
+<cadre>puedes utilizar notas numeradas automáticamente[[Situando el texto de la nota entre corchetes.]],
+- y también forzar la numeración de la nota[[<23> Indicando el número de la nota entre los símbolos «<» y «>».]],
+- usar notas con forma de asterisco [[<*> Simplemente poniendo un asterisco entre los signos «<» y «>».]],
+- crear notas sin referencia (sin numerar); cuidado, estas notas no tienen un enlace entre la nota y su llamada en el texto[[<> No escribiendo nada entre los símbolos «<» y «>».]],
+- darle un nombre (todo en letra) a una nota; uso muy extendido para las referencias bibliográficas[[<Rab> François Rabelais.]];
+- llamar a una nota ya existente[[<23>]] indicando el número de esa nota entre los símbolos «<» y «>». y dejando vacía el resto de la nota.</cadre>
+
+produce:
+
+<quote>puedes utilizar notas numeradas automáticamente[[Situando el texto de la nota entre corchetes.]],
+- y también forzar la numeración de la nota[[<23> Indicando el número de la nota entre los símbolos «<» y «>».]],
+- usar notas con forma de asterisco [[<*> Simplemente poniendo un asterisco entre los signos «<» y «>».]],
+- crear notas sin referencia (sin numerar); cuidado, estas notas no tienen un enlace entre la nota y su llamada en el texto[[<> No escribiendo nada entre los símbolos «<» y «>».]],
+- darle un nombre (todo en letra) a una nota; uso muy extendido para las referencias bibliográficas[[<Rab> François Rabelais.]];
+- llamar a una nota ya existente[[<23>]] indicando el número de esa nota entre los símbolos «<» y «>». y dejando vacía el resto de la nota.</quote>

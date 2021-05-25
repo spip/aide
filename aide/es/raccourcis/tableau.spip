@@ -1,0 +1,63 @@
+Para realizar tablas muy simples con SPIP, puedes crear líneas con las «casillas» separadas por el símbolo «<HTML>|</HTML>» ({pipe}, un trazo vertical), y que comienzan y terminan con trazos verticales. Es obligatorio dejar líneas vacías antes y después de la tabla.
+
+Por ejemplo, la tabla:
+
+| {{Apellido}} | {{Nombre}} | {{Edad}} |
+| Marso | Ben | 23 años |
+| Capitana | | desconocida |
+| Philant | Philippe | 46 años |
+| Cadoc | Bebé | 4 meses |
+
+se codifica así:
+
+<cadre>
+
+| {{Apellido}} | {{Nombre}} | {{Edad}} |
+| Marso | Ben | 23 años |
+| Capitana | | desconocida |
+| Philant | Philippe | 46 años |
+| Cadoc | Bebé | 4 meses |
+</cadre>
+
+Fíjate en que todas las entradas de la primera línea están en negrita. SPIP identifica así que se trata de una línea de encabezado, y le atribuye una presentación distinta de las demás líneas (fondo de diferente color). La presencia de una línea como esa no es obligatoria.
+
+También puede añadir una leyenda y un resumen a la tabla. Estos dos datos son opcionales, pero son muy importantes para que la tabla sea accesible a los discapacitados visuales, ya que el resumen da una mejor idea del contenido de la tabla.
+Esta información se especifica entre líneas verticales dobles antes de la tabla, así:
+<cadre>
+
+||Leyenda|Resumen||
+| {{Nombre}} |{Fecha de nacimiento}} |{Ciudad}} |
+| Jacques | 5/10/1970 | Paris |
+| Claire | 12/2/1975 | Belfort |
+| Martin | 1/31/1957 | Nice |
+| Marie | 23/12/1948 | Perpignan |
+
+</cadre>
+y aparecerá así:
+||Leyenda|Resumen||
+| {{Nombre}} |{Fecha de nacimiento}} |{Ciudad}} |
+| Jacques | 5/10/1970 | Paris |
+| Claire | 12/2/1975 | Belfort |
+| Martin | 1/31/1957 | Nice |
+| Marie | 23/12/1948 | Perpignan |
+
+Es posible no especificar ninguna de las informaciones, pero es importante recordar que hay que poner una simple línea vertical delante del resumen si sólo se especifica éste: <code>|| | resumen ||</code>
+
+También es posible fusionar una caja con otras, reduciendo su contenido a <code>|<|</code> para fusionarla con la caja que la precede horizontalmente; o a <code>|^|</code> para fusionarla con la caja que la precede verticalmente.
+
+<cadre>
+||Tableau avec fusion| Raccourci de fusion||
+| {{columna 1}} | {{columna 2}} | {{columna 3}} |
+| Ligne 1 | L1C2 et L1C3 |<|
+| Ligne 2 | L2C2 et L3C2|L2C3|
+| Ligne 3 |^| L3C3 |
+
+</cadre>
+
+donnera
+
+||Tabla con fusión| Atajo de fusión|||
+| {{columna 1}} | {{columna 2}} | {{columna 3}} |
+| Ligne 1 | L1C2 et L1C3 |<|
+| Ligne 2 | L2C2 et L3C2|L2C3|
+| Ligne 3 |^| L3C3 |
