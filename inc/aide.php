@@ -35,12 +35,12 @@ include_spip('inc/filtres');
 /**
  * Déclaration de l'index d'aide
  */
-function aide_index() : array {
+function aide_index(): array {
 	static $index = null;
 	if ($index === null) {
 		$index = [];
 		$index['raccourcis'] = [
-			'resume', 'simple', 'lien', 'note', 'citation', 
+			'resume', 'simple', 'lien', 'note', 'citation',
 			'tableau', 'liste', 'glossaire', 'ancre', 'code'
 		];
 		$index = pipeline('aide_index', $index);
@@ -51,7 +51,7 @@ function aide_index() : array {
 /**
  * Quelques mappages d'alias historiques <= SPIP 4
  */
-function aide_index_alias_historiques() : array {
+function aide_index_alias_historiques(): array {
 	return [
 		'text_area' => 'raccourcis',
 		'chapo' => 'raccourcis',
@@ -65,17 +65,17 @@ function aide_index_alias_historiques() : array {
  * @uses aider_icone()
  *
  * @param string $aide
- *    clé d'identification du groupe d'aide souhaité. Peut indiquer une entrée spécifique. 
+ *    clé d'identification du groupe d'aide souhaité. Peut indiquer une entrée spécifique.
  *    Tel que 'raccourcis' ou 'raccourcis/liens'
  * @return string
- *    icone et lien… 
+ *    icone et lien…
  *    vide si on ne trouve pas le groupe d'aide demandé.
  **/
-function inc_aide_dist($aide = '') : string {
+function inc_aide_dist($aide = ''): string {
 	$index = aide_index();
 	if (!$aide) {
 		// pour le moment rien sur entrée vide...
-		return "";
+		return '';
 	}
 
 	$alias = aide_index_alias_historiques();
@@ -87,7 +87,7 @@ function inc_aide_dist($aide = '') : string {
 	$groupe = array_shift($aide);
 	$entree = $aide ? reset($aide) : '';
 	if (!isset($index[$groupe])) {
-		return "";
+		return '';
 	}
 
 	$url = aide_generer_url($groupe, $entree);
@@ -96,7 +96,7 @@ function inc_aide_dist($aide = '') : string {
 }
 
 /** Génère l'url d'une entrée d'aide */
-function aide_generer_url(string $groupe, ?string $entree = null) : string {
+function aide_generer_url(string $groupe, ?string $entree = null): string {
 	$url = generer_url_ecrire('aide');
 	$url = parametre_url($url, 'aide', $groupe, '&');
 	if ($entree) {
@@ -140,7 +140,7 @@ function aider_icone($url, $clic = '') {
 
 
 // Affichage du menu de gauche avec analyse de la section demandee
-function aide_data(?string $groupe = null) : array {
+function aide_data(?string $groupe = null): array {
 	static $menu = [];
 	if (!isset($menu[$groupe])) {
 		include_spip('inc/aide');
@@ -185,7 +185,7 @@ function aide_data(?string $groupe = null) : array {
 /**
  * Retrouve le contenu d'une aide demandée
  */
-function aide_contenu(string $groupe, string $entree) : string {
+function aide_contenu(string $groupe, string $entree): string {
 	$langues = aide_langues();
 	foreach ($langues as $lang) {
 		$aide_entree = find_in_path("aide/$lang/$groupe/$entree.spip");
@@ -200,10 +200,10 @@ function aide_contenu(string $groupe, string $entree) : string {
 /**
  * Retourne la liste des langues dans laquelle une aide est cherchée
  * On part par défaut de spip_lang
- * 
+ *
  * pt_br => pt => langue_du_site => langue_par_defaut => fr
  */
-function aide_langues($lang = null) : array {
+function aide_langues($lang = null): array {
 	if ($lang === null) {
 		$lang = $GLOBALS['spip_lang'];
 	}
