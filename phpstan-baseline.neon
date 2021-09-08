@@ -1,0 +1,57 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Function _T not found\\.$#"
+			count: 6
+			path: inc/aide.php
+
+		-
+			message: "#^Function aide_lang_dir not found\\.$#"
+			count: 1
+			path: inc/aide.php
+
+		-
+			message: "#^Function find_in_path not found\\.$#"
+			count: 1
+			path: inc/aide.php
+
+		-
+			message: "#^Function generer_url_ecrire not found\\.$#"
+			count: 1
+			path: inc/aide.php
+
+		-
+			message: "#^Function http_img_pack not found\\.$#"
+			count: 1
+			path: inc/aide.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 3
+			path: inc/aide.php
+
+		-
+			message: "#^Function lire_fichier not found\\.$#"
+			count: 1
+			path: inc/aide.php
+
+		-
+			message: "#^Function parametre_url not found\\.$#"
+			count: 2
+			path: inc/aide.php
+
+		-
+			message: "#^Function pipeline not found\\.$#"
+			count: 1
+			path: inc/aide.php
+
+		-
+			message: "#^Undefined variable\\: \\$content$#"
+			count: 2
+			path: inc/aide.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 1
+			path: prive/squelettes/contenu/aide_fonctions.php
+
