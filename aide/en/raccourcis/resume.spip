@@ -1,0 +1,59 @@
+
+<pre><code class="language-spip_typo">
+{{An intertitle }}}
+
+Text with {italic} and {{bold}} or a {{ {mix of both} }}.
+A line break with [an external link->https://www.spip.net] and [an internal link->art12] with an automatic title [->rubrique10].
+
+Another paragraph with [[A footnote]] and a [?glossary] term.
+
+-* A list
+-* A list
+-** A sub-element of a list
+
+-# An ordered list
+-# An ordered list
+-## Sub-item of an ordered list
+
+A separator
+----
+
+A table
+| {{ Location }} | {{ Action }} |
+| Caves | Spip Party |
+|Toulouse | Spip in pink |
+
+The definition of an anchor [direct<-] with a link to get there [->#direct].
+
+<quote>A quote</quote>
+</code></pre>
+
+
+
+
+{{An intertitle }}}
+
+Text with {italic} and {{bold}} or a {{ {mix of both} }}.
+A line break with [an external link->https://www.spip.net] and [an internal link->art12] with an automatic title [->rubrique10].
+
+Another paragraph with [[A footnote]] and a [?glossary] term.
+
+-* A list
+-* A list
+-** A sub-element of a list
+
+-# An ordered list
+-# An ordered list
+-## Sub-item of an ordered list
+
+A separator
+----
+
+A table
+| {{ Location }} | {{ Action }} |
+| Caves | Spip Party |
+|Toulouse | Spip in pink |
+
+The definition of an anchor [direct<-] with a link to go there [->#direct].
+
+<quote>A quote</quote>
