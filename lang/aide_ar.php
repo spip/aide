@@ -9,7 +9,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
     'raccourcis_lien' => 'روابط هايبرتكست',
     'raccourcis_liste' => 'اللوائح والترقيم',
     'raccourcis_note' => 'الحواشي',
-    'raccourcis_resume' => 'ياختصار',
+    'raccourcis_resume' => 'باختصار',
     'raccourcis_simple' => 'تصميم مبسط',
     'raccourcis_tableau' => 'الجداول',
 );
