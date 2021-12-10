@@ -11,6 +11,6 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// A
 	'aide_description' => 'يتيح هذا الملحق إدخال تعليمات فورية على SPIP يُدلّ اليها برمز معين. يمكن تعميم هذه التعليمات على ملاحق أخرى.',
-	'aide_nom' => 'تعليمات »[ّ[',
+	'aide_nom' => 'تعليمات SPIP',
 	'aide_slogan' => 'تعليمات SPIP الفورية'
 );
