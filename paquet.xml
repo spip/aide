@@ -3,7 +3,7 @@
 	categorie="divers"
 	version="2.1.0-dev"
 	etat="dev"
-	compatibilite="[4.0.0-beta;4.0.*]"
+	compatibilite="[4.1.0-dev;4.1.*]"
 	logo="aide-logo.svg"
 >
 
