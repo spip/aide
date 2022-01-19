@@ -1,7 +1,18 @@
 {
+    "require": {
+        "php": "^7.4 || ^8.0"
+    },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
-        "spip/coding-standards": "^1.2",
-        "phpstan/phpstan": "^0.12.98"
+        "phpstan/phpstan": "^1.4",
+        "spip/coding-standards": "^1.2"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+        "platform": {
+            "php": "7.4.27"
+        }
     }
 }
