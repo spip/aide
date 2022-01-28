@@ -1,8 +1,8 @@
 <paquet
 	prefix="aide"
 	categorie="divers"
-	version="2.1.0-dev"
-	etat="dev"
+	version="3.0.0-dev"
+	etat="stable"
 	compatibilite="[4.1.0-dev;4.1.*]"
 	logo="aide-logo.svg"
 >
