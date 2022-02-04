@@ -16,6 +16,9 @@
 	<langue code="fr_tu" url="https://trad.spip.net/tradlang_module/aide-aide?lang_cible=fr_tu" total="11" traduits="11" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
 		<traducteur nom="RealET" lien="https://trad.spip.net/auteur/realet" />
 	</langue>
+	<langue code="it" url="https://trad.spip.net/tradlang_module/aide-aide?lang_cible=it" total="11" traduits="8" relire="0" modifs="0" nouveaux="3" pourcent="72.73">
+		<traducteur nom="Alberto" lien="https://trad.spip.net/auteur/alberto" />
+	</langue>
 	<langue code="pt" url="https://trad.spip.net/tradlang_module/aide-aide?lang_cible=pt" total="11" traduits="9" relire="2" modifs="0" nouveaux="0" pourcent="81.82">
 		<traducteur nom="Jorge Paulo Malveira Pimentel Dos Santos" lien="https://trad.spip.net/auteur/jorge-paulo-malveira-pimentel-dos-santos" />
 	</langue>
