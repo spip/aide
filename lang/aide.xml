@@ -8,6 +8,9 @@
 	<langue code="ar" url="https://trad.spip.net/tradlang_module/aide-aide?lang_cible=ar" total="11" traduits="11" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
 		<traducteur nom="George" lien="https://trad.spip.net/auteur/جورج-قندلفت" />
 	</langue>
+	<langue code="de" url="https://trad.spip.net/tradlang_module/aide-aide?lang_cible=de" total="11" traduits="11" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
+		<traducteur nom="Torsten Willmann" lien="https://trad.spip.net/auteur/torsten-willmann" />
+	</langue>
 	<langue code="en" url="https://trad.spip.net/tradlang_module/aide-aide?lang_cible=en" total="11" traduits="11" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
 		<traducteur nom="George" lien="https://trad.spip.net/auteur/جورج-قندلفت" />
 	</langue>
@@ -21,5 +24,8 @@
 	</langue>
 	<langue code="pt" url="https://trad.spip.net/tradlang_module/aide-aide?lang_cible=pt" total="11" traduits="9" relire="2" modifs="0" nouveaux="0" pourcent="81.82">
 		<traducteur nom="Jorge Paulo Malveira Pimentel Dos Santos" lien="https://trad.spip.net/auteur/jorge-paulo-malveira-pimentel-dos-santos" />
+	</langue>
+	<langue code="pt_br" url="https://trad.spip.net/tradlang_module/aide-aide?lang_cible=pt_br" total="11" traduits="11" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
+		<traducteur nom="Ricardo Porto" lien="https://trad.spip.net/auteur/ricardo-porto" />
 	</langue>
 </traduction>
