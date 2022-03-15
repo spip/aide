@@ -170,7 +170,7 @@ function aide_data(?string $groupe = null): array {
 				'entrees' => [],
 			];
 			foreach ($entrees as $entree) {
-				$menu[$groupe]['entrees'][] = [
+				$menu[$groupe]['entrees'][$entree] = [
 					'titre' => _T('aide:' . $groupe . '_' . $entree),
 					'groupe' => $menu[$groupe]['titre'],
 					'texte' => aide_contenu($groupe, $entree),
