@@ -38,23 +38,33 @@
 <div class="aide_conteneur">
 	#SET{data,#ENV{aide}|aide_data}
 	[(#GET{data}|oui)
-	<div class="aide_menu">
-		<div class="navigation">
-			<h3>#GET{data/titre}</h3>
-			<ul class="liste_items">
-			<BOUCLE_menu_entrees(DATA){source table, #GET{data/entrees}}>
-				<li class='item[ (#ENV{entree}|=={#CLE})on]'>
-					<a href='#aide-#GROUPE-#CLE'>#TITRE</a>
-				</li>
-			</BOUCLE_menu_entrees>
-			</ul>
-		</div>
-	</div>
+		[(#ENV{aide}|oui)
+			<div class="aide_menu">
+				<div class="navigation">
+					<h3>#GET{data/titre}</h3>
+					<ul class="liste_items">
+					<BOUCLE_menu_entrees(DATA){source table, #GET{data/entrees}}>
+						<li class='item[ (#ENV{entree}|=={#CLE})on]'>
+							[(#ENV{entree}|non)<a href='#aide-#GROUPE-#CLE'>#TITRE</a>]
+							[(#ENV{entree}|oui)<a class='ajax' href='[(#ENV{aide}|aide_generer_url|parametre_url{entree,#CLE})]'>#TITRE</a>]
+						</li>
+					</BOUCLE_menu_entrees>
+						<li><a class='ajax' href='[(#URL_ECRIRE{aide})]'><:retour:></a></li>
+					</ul>
+					
+				</div>
+			</div>
+		]
 	<div class="aide_contenu">
 		<h1>#GET{data/titre}</h1>
 		[<div class="introduction">(#GET{data/intro}|propre)</div>]
-
-		<BOUCLE_content_entrees(DATA){source table, #GET{data/entrees}}>
+		
+		[(#SET{content,#GET{data/entrees}})]
+		[(#GET{data/entrees/#ENV{entree}}|oui)
+			[(#SET{content,#LISTE{#GET{data/entrees/#ENV{entree}}}})]
+		]
+		
+		<BOUCLE_content_entrees(DATA){source table, #GET{content}}>
 			<div id="aide-#GROUPE-#CLE"></div>
 			[(#SET{titre,[(#LINK|?{<a href="#LINK" class="ajax">#TITRE</a>,#TITRE})]})]
 			#BOITE_OUVRIR{#GET{titre},simple}
