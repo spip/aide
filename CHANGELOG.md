@@ -6,6 +6,10 @@
 
 - Fichier `CHANGELOG.md`
 
+### Changed
+
+- Mise à jour des chaînes de langues depuis trad.spip.net
+
 ## [3.0.3] - 2022-03-25
 
 ### Changed
