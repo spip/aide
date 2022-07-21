@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+### Changed
+
+- Mise à jour des chaînes de langues depuis trad.spip.net
+
 ## [3.0.4] - 2022-05-20
 
 ## Added
